@@ -1,10 +1,10 @@
 <%@page import="model.Catelogy"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="DAO.NavTab"%>
-<%@page import="DAO.GetDataCategory"%>
+<%@page import="dao.NavTab"%>
+<%@page import="dao.GetDataCategory"%>
 <%@page import="util.Utils"%>
 <%@page import="java.util.Locale"%>
-<%@page import="DAO.GetDataProduct"%>
+<%@page import="dao.GetDataProduct"%>
 <%@page import="model.Product"%>
 <%@page import="java.util.TreeMap"%>
 <%@page import="java.util.Map.Entry"%>

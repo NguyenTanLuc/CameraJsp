@@ -1,8 +1,9 @@
 package controller;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.*;
+import com.google.gson.Gson;
+
+import dao.Login;
 import model.User;
 
 
@@ -47,22 +50,24 @@ public class CheckLogin extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		CheckLoginUser(request, response);
+		System.out.println("Asdasd");
 		
 	}
 	private void CheckLoginUser(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		String account = request.getParameter("account");
+		System.out.println(account	);
 		String pass = request.getParameter("pass");
+		Gson gson = new Gson();
 		boolean errInput =false;
 		String errUserLogin ="";
 		String errUser ="";
+		Map<String, Object> map = new HashMap<String, Object>();
 		if (account.equals("") || account.equals(null) || pass.equals("") || account.equals(null)) {
 			errInput = true;
 			errUser ="Vui lòng điền tên đăng nhập và mật khẩu của bạn !";
-			request.setAttribute("errInput", errInput);
-			request.setAttribute("errUser", errUser);
-
+			response.getWriter().println(errUser);
 			return;
 		}
 			
@@ -70,12 +75,14 @@ public class CheckLogin extends HttpServlet {
 			User user = Login.Login(account, pass);
 			if (user == null) {
 				errUserLogin = "Tài khoản hoặc mật khẩu không đúng. Vui lòng thử lại !";
-				request.setAttribute("errUserLogin", errUserLogin);
+				response.getWriter().println(errUserLogin);
+				
 			}else {
 				HttpSession session = request.getSession();
+				String userjs = gson.toJson(user);
+				response.getWriter().println(userjs);
+				
 				session.setAttribute("user", user);
-				RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
-				response.sendRedirect("index.jsp");
 			}
 			
 		}

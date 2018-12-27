@@ -1,7 +1,7 @@
 <%@page import="model.Nav_tab"%>
-<%@page import="DAO.NavTab"%>
-<%@page import="DAO.GetDataCategory"%>
-<%@page import="DAO.ConectionDB"%>
+<%@page import="dao.NavTab"%>
+<%@page import="dao.GetDataCategory"%>
+<%@page import="dao.ConectionDB"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="model.Product"%>
 <%@page import="java.util.ArrayList"%>

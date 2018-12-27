@@ -1,5 +1,5 @@
-<%@page import="DAO.GetDataCategory"%>
-<%@page import="DAO.GetDataProduct"%>
+<%@page import="dao.GetDataCategory"%>
+<%@page import="dao.GetDataProduct"%>
 <%@page import="model.Product"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"

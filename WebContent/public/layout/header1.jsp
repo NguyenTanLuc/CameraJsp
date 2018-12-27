@@ -10,13 +10,16 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<div class="topDangNhap" style="float: right;">
-									<div class="textWhite">
-										<a class="fa fa-user aDangNhap" href="#" data-toggle="modal"
+									<div id="topuser" class="textWhite">
+										<a id="user" class="fa fa-user aDangNhap" href="#" data-toggle="modal"
 											data-target="#formlogin"><%if(session.getAttribute("user") == null){ %>
-											 Đăng nhập
+											 Đăng nhập </a>
 											 <%}else{ %>
 											 <%User user = (User) session.getAttribute("user");
-											 	%>Xin chào <%=user.getName()%> <%} %></a>
+											 	%>Xin chào <%=user.getName()%> </a>
+											 	<script type="text/javascript">$("#topuser").html("<a id='user' class'fa fa-user aDangNhap'> Xin chào" +<%=user.getName()%> + "</a>"))</script>
+											 	<a ></a>
+											 	<%} %>
 									</div>
 								</div>
 								<% TreeMap<Integer,Integer> map = null;
@@ -74,7 +77,7 @@
 			<div class="modal-dialog modal-md">
 				<div class="modal-content">
 					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">
+						<button id="closeModal" type="button" class="close" data-dismiss="modal">
 							<span class="fa fa-remove"></span>
 						</button>
 						<ul class="nav nav-tabs ">
@@ -90,7 +93,7 @@
 						<div class="tab-content">
 							<div id="login-form" class="tab-pane fade in active">
 							<div id = "err_login" class = "erro" ></div>
-								<form id="myFormLogin" action="CheckLogin" method="post">
+								<form id="myFormLogin" action="" method="post">
 									<div class="form-group">
 										<label for="email">Tên đăng nhập:</label> <input type="text"
 											class="form-control" placeholder="Enter email" name="account">
@@ -107,7 +110,7 @@
 												mật khẩu</a>
 										</div>
 									</div>
-									<button type="submit" id="btnLogin" class="btn btn-default">Đăng
+									<button type="button"  id="btnLogin" class="btn btn-default" onclick="login()">Đăng
 										nhập</button>
 								</form>
 							</div>
@@ -238,6 +241,7 @@
 			</div>
 		</div>
 	</div>
+	
 	<script > function login() {
 		var account =document.getElementsByName("account")[0].value;
 		var pass = document.getElementsByName("pass")[0].value;
@@ -250,6 +254,16 @@
 			},
 			url: "<%=request.getContextPath()%>/CheckLogin",
 			success: function(data) {
+				alert(data.length);
+				if (data.length >60) {
+					var obj = JSON.parse(data);
+					document.getElementById("closeModal").click();
+					$("#topuser").html("<a id='user' class'fa fa-user aDangNhap'> Xin chào" +obj.name + "</a>");
+					
+					
+				}else{
+					$("#err_login").text(data);
+				}
 				
 				
 				

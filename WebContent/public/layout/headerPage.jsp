@@ -1,8 +1,8 @@
 <%@page import="model.Catelogy"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="DAO.NavTab"%>
+<%@page import="dao.NavTab"%>
 <%@page import="model.Nav_tab"%>
-<%@page import="DAO.GetDataCategory"%>
+<%@page import="dao.GetDataCategory"%>
 <%@page import="java.util.TreeMap"%>
 <%@page import="model.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
