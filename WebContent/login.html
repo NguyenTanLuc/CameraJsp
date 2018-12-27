@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- CSS and Jquery start here -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LẮP ĐẶT CAMERA QUAN SÁT GIÁ RẺ UY TÍN TẠI MLC VN</title>
+    <link rel="stylesheet" type="text/css" href="public/stylesheets/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="public/stylesheets/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="public/stylesheets/app.css" />
+    <link rel="stylesheet" href="public/stylesheets/page.css">
+    <link rel="stylesheet" type="text/css" href="public/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <script src="public/js/jquery-2.1.3.min.js"></script>
+</head>
+
+<body>
+    <!-- <div data-include="header"> </div> -->
+
+    <div class="container">
+        <div id="formDangNhap">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-lg-6">
+                    <h3 class="headerDangNhap">Đăng Nhập</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="login">Email hoặc tên đăng nhập</label>
+                            <input type="text" class="form-control" name="login" placeholder="Email hoặc tên đăng nhập">
+                            <label for="passwd">Mật khẩu</label>
+                            <input type="password" class="form-control" placeholder="Mật khẩu">
+                            <a href="" style="float: right">Quên mật khẩu?</a> <br>
+                            <button class="btn btn-danger">Đăng nhập</button>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="col-md-6 col-sm-6 col-lg-6">
+                    <h3 class="headerDangNhap">Chưa có tài khoản</h3>
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <label for="hoten"> Họ tên<span class="required">*</span></label>
+                            <input type="text" class="form-control" name="hoten">
+                            <label for="diachi"> Địa chỉ<span class="required">*</span></label>
+                            <input type="text" class="form-control" name="diachi">
+                            <label for="thanhpho"> Họ tên<span class="required">*</span></label>
+                            <select name="thanhpho" id="thanhpho" class="form-control">
+                                <option value="" selected="">Chọn --</option>
+                                <option value="Hà nội">Hà nội</option>
+                                <option value="TP. Hồ Chí Minh">TP. Hồ Chí Minh</option>
+                                <option value="Hòa Bình">Hòa Bình</option>
+                                <option value="Hà Giang">Hà Giang</option>
+                                <option value="Lào Cai">Lào Cai</option>
+                                <option value="Sơn La">Sơn La</option>
+                                <option value="Điện Biên">Điện Biên</option>
+                                <option value="Lạng Sơn">Lạng Sơn</option>
+                                <option value="Cao Bằng">Cao Bằng</option>
+                                <option value="Tuyên Quang">Tuyên Quang</option>
+                                <option value="Yên Bái">Yên Bái</option>
+                                <option value="Ninh Bình">Ninh Bình</option>
+                                <option value="TP. Hải Phòng">TP. Hải Phòng</option>
+                                <option value="Quảng Ninh">Quảng Ninh</option>
+                                <option value="Hà Tây">Hà Tây</option>
+                                <option value="Thái Bình">Thái Bình</option>
+                                <option value="Thanh Hóa">Thanh Hóa</option>
+                                <option value="Nghệ An">Nghệ An</option>
+                                <option value="Hà Tĩnh">Hà Tĩnh</option>
+                                <option value="Đắc Lắc">Đắc Lắc</option>
+                                <option value="Quảng Bình">Quảng Bình</option>
+                                <option value="Quảng Trị">Quảng Trị</option>
+                                <option value="TP. Huế">TP. Huế</option>
+                                <option value="Quảng Ngãi">Quảng Ngãi</option>
+                                <option value="Bình Định">Bình Định</option>
+                                <option value="Phú Yên">Phú Yên</option>
+                                <option value="Khánh Hòa">Khánh Hòa</option>
+                                <option value="Gia Lai">Gia Lai</option>
+                                <option value="Đồng Nai">Đồng Nai</option>
+                                <option value="Bình Thuận">Bình Thuận</option>
+                                <option value="Lâm Đồng">Lâm Đồng</option>
+                                <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option>
+                                <option value="Tây Ninh">Tây Ninh</option>
+                                <option value="Đồng Tháp">Đồng Tháp</option>
+                                <option value="Ninh Thuận">Ninh Thuận</option>
+                                <option value="Vĩnh Long">Vĩnh Long</option>
+                                <option value="TP. Cần Thơ">TP. Cần Thơ</option>
+                                <option value="Long An">Long An</option>
+                                <option value="Tiền Giang">Tiền Giang</option>
+                                <option value="Trà Vinh">Trà Vinh</option>
+                                <option value="Bến Tre">Bến Tre</option>
+                                <option value="An Giang">An Giang</option>
+                                <option value="Kiên Giang">Kiên Giang</option>
+                                <option value="Lai Châu">Lai Châu</option>
+                                <option value="Sóc Trăng">Sóc Trăng</option>
+                                <option value="Đắc Nông">Đắc Nông</option>
+                                <option value="Phú Thọ">Phú Thọ</option>
+                                <option value="Vĩnh Phúc">Vĩnh Phúc</option>
+                                <option value="Bắc Giang">Bắc Giang</option>
+                                <option value="Thái Nguyên">Thái Nguyên</option>
+                                <option value="Bắc Cạn">Bắc Cạn</option>
+                                <option value="Hải Dương">Hải Dương</option>
+                                <option value="Hưng Yên">Hưng Yên</option>
+                                <option value="Nam Định">Nam Định</option>
+                                <option value="Hà Nam">Hà Nam</option>
+                                <option value="Quảng Nam">Quảng Nam</option>
+                                <option value="TP. Đà nẵng">TP. Đà nẵng</option>
+                                <option value="Bình Dương">Bình Dương</option>
+                                <option value="Bình Phước">Bình Phước</option>
+                                <option value="Cà Mau">Cà Mau</option>
+                                <option value="Bạc Liêu">Bạc Liêu</option>
+                                <option value="Bắc Ninh">Bắc Ninh</option>
+                            </select>
+                            <label for="login">Email hoặc tên đăng nhập<span class="required">*</span></label>
+                            <input type="text" class="form-control" name="login">
+                            <label for="passwd">Mật khẩu<span class="required">*</span></label>
+                            <input type="password" class="form-control" name="passwd">
+                            <label for="passwdagain">Nhập lại mật khẩu<span class="required">*</span></label>
+                            <input type="password" class="form-control" name="passwd">
+                            <input class="btn btn-danger" type="submit" value="Đăng kí" />
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-include="footer"> </div>
+    <script>
+        $(function () {
+            var includes = $('[data-include]');
+            jQuery.each(includes, function () {
+                var file = 'public/layout/' + $(this).data('include') + '.html';
+                $(this).load(file);
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>

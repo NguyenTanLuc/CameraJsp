@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="no-js" lang="vi">
+
+<head>
+    <!-- CSS and Jquery start here -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LẮP ĐẶT CAMERA QUAN SÁT GIÁ RẺ UY TÍN TẠI MLC VN</title>
+    <!-- <link rel="stylesheet" type="text/css" href="public/stylesheets/bootstrap.css" /> -->
+    <link rel="stylesheet" type="text/css" href="public/stylesheets/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="public/stylesheets/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="public/stylesheets/app.css" />
+    <link rel="stylesheet" type="text/css" href="public/font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="public/stylesheets/flexslider.css" />
+    <script src="public/js/jquery-2.1.3.min.js"></script>
+    <script src="public/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="public/js/bootstrap.min.js"></script>
+    <script src="public/js/bootbox.min.js"></script>
+    <!-- <script src="public/js/bootstrap.js"></script> -->
+    <script src="public/js/scrollfix.js"></script>
+    <script src="public/js/equalheight.js"></script>
+    <script src="public/js/jquery.flexslider-min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic&subset=latin,vietnamese'
+        rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic&subset=latin,vietnamese' rel='stylesheet'
+        type='text/css'>
+    <link rel="stylesheet" type="text/css" href="public/stylesheets/social-likes_birman.css" />
+    <script src="public/js/social-likes.min.js"></script>
+    <!-- CSS and Jquery end here -->
+</head>
+
+<body lang="vi">
+    <div id="conten">
+       
+        <!-- Top start here -->
+        <div data-include="header"> </div>
+        <!-- Top end here -->
+         <div data-include="topmenu"> </div>
+    </div>
+   
+    <div data-include="footer">
+    </div>
+    <!-- end footer -->
+
+   
+
+    <!-- <script type="text/javascript" charset="utf-8">
+        $(window).load(function () {
+            equalheight('.thumbnail.products');
+            equalheight('.thumbnail.news');
+            equalheight('.equalheight1');
+            equalheight('.equalheightbanner');
+        });
+
+
+        $(window).resize(function () {
+            equalheight('.thumbnail.products');
+            equalheight('.thumbnail.news');
+            equalheight('.equalheight1');
+            equalheight('.equalheightbanner');
+        });
+
+        $('#menu ul > li').hover(function () {
+            $(this).children('ul').stop(true, true).delay(200).fadeIn(300);
+        }, function () {
+            $(this).children('ul').stop(true, true).fadeOut(300);
+        });
+
+        $('#prd-cate-list .sub-page > ul > li').hover(function () {
+            $(this).children('ul').stop(true, true).delay(200).fadeIn(300);
+        }, function () {
+            $(this).children('ul').stop(true, true).fadeOut(300);
+        });
+
+        $('#prd-cate-list').hover(function () {
+            $(this).children('ul.sub-page').stop(true, true).delay(200).slideDown(300);
+        }, function () {
+            $(this).children('ul.sub-page').stop(true, true).slideUp(300);
+        });
+
+        $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            $(this).parent().siblings().removeClass('open');
+            $(this).parent().toggleClass('open');
+        });
+
+        $('.scrollfix').scrollFix({ fixTop: 40 });
+
+        if ($(window).scrollTop() != "0")
+            $("#go_top").fadeIn("slow");
+        var scrollDiv = $("#go_top");
+        $(window).scroll(function () {
+            if ($(window).scrollTop() == "0")
+                $(scrollDiv).fadeOut("slow")
+            else
+                $(scrollDiv).fadeIn("slow")
+        });
+        $("#go_top").click(function () {
+            $("html, body").animate({
+                scrollTop: $("#ScrollTo").offset().top
+            }, "slow")
+        });
+
+        $('.mobileslider').flexslider({
+            animation: "fade",
+            animationLoop: true,
+            directionNav: false,
+            controlNav: false,
+        });
+        $('.bannerslider').flexslider({
+            animation: "fade",
+            animationLoop: true,
+            directionNav: false,
+        });
+
+        $('.galleryslider').flexslider({
+            animation: "slide",
+            itemWidth: 122,
+            controlNav: false,
+        });
+
+        $('.newsslider').flexslider({
+            animation: "slide",
+            direction: "vertical",
+            controlNav: false,
+            directionNav: false,
+            slideshowSpeed: 3000,
+        });
+
+        $('#prd-cate-list .main-page > ul > li').hover(function () {
+            $(this).children('ul').stop(true, true).delay(200).fadeIn(500);
+        }, function () {
+            $(this).children('ul').stop(true, true).fadeOut(500);
+        });
+    </script> -->
+    <script>
+        $(function () {
+            var includes = $('[data-include]');
+            jQuery.each(includes, function () {
+                var file = 'public/layout/' + $(this).data('include') + '.html';
+                $(this).load(file);
+            });
+        });
+    </script>
+
+    <style>
+
+    </style>
+
+
+
+</body>
+
+</html>

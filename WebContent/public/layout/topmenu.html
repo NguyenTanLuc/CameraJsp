@@ -1,0 +1,1034 @@
+<div id="top">
+    <div id="fb-root" class=" fb_reset">
+        <div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
+            <div></div>
+        </div>
+        <div style="position: absolute; top: -10000px; height: 0px; width: 0px;">
+            <div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true"
+                    scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame"
+                    tabindex="-1" src="https://staticxx.facebook.com/connect/xd_arbiter/r/__Bz3h5RzMx.js?version=42#channel=f30f553d20df4cc&amp;origin=http%3A%2F%2Flocalhost"
+                    style="border: none;"></iframe></div>
+        </div>
+    </div>
+    <div id="top-menu" class="hidden-sm hidden-xs">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="top-hotline" style="float:right;">
+                                <div class="name">
+                                    <a class="fa fa-user aDangNhap" href="#" data-toggle="modal" data-target=".login-register-form">
+                                        Đăng nhập</a>
+                                </div>
+                            </div>
+                            <div class="top-hotline" style="float:right;">
+                                <div class="name">
+                                    <a class="name_cart" href="/gio-hang">Giỏ hàng (<b>0</b> sản phẩm)</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top:50px;" class="hidden-lg hidden-md">
+        <div class="mobileslider">
+            <ul class="slides">
+                <li class="flex-active-slide" style="width: 100%; float: left; margin-right: -100%; opacity: 1; display: block; z-index: 2;">
+                    <a href="#">
+                        <img alt="camera quan sát trên điện thoại" src="http://fptcamera.vn/resources/uploads/images/automatic/quang-cao/lap-dat-camera-quan-sat-fpt.jpg">
+                        <div class="clear"></div>
+                    </a>
+                </li>
+                <li style="width: 100%; float: left; margin-right: -100%; opacity: 0; display: block; z-index: 1;">
+                    <a href="#">
+                        <img alt="camera quan sát trên điện thoại 2" src="http://fptcamera.vn/resources/uploads/images/automatic/quang-cao/camera-quan-sat-tren-dien-thoai-2.jpg">
+                        <div class="clear"></div>
+                    </a>
+                </li>
+                <li style="width: 100%; float: left; margin-right: -100%; opacity: 0; display: block; z-index: 1;">
+                    <a target="_blank" href="http://fptcamera.vn/tin-tuc/xem-camera-giam-sat-qua-dien-thoai">
+                        <img alt="xem camera trên điện thoại di động" src="http://fptcamera.vn/resources/uploads/images/automatic/quang-cao/xem-camera-tren-dien-thoai-di-dong.jpg">
+                        <div class="clear"></div>
+                    </a>
+                </li>
+                <li style="width: 100%; float: left; margin-right: -100%; opacity: 0; display: block; z-index: 1;">
+                    <a href="#">
+                        <img alt="Đầu ghi hình camera quan sát" src="http://fptcamera.vn/resources/uploads/images/automatic/quang-cao/dau-ghi-hinh-camera-quan-sat1.jpg">
+                        <div class="clear"></div>
+                    </a>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="container hidden-xs hidden-sm">
+        <div class="row top-header" id="ScrollTo">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-12 col-md-3">
+                        <div id="logo">
+                            <a href="">
+                                <img title="LẮP ĐẶT CAMERA QUAN SÁT GIÁ RẺ" alt="Camera FPT Việt Nam tự hào Nhà cung cấp thiết bị camera giám sát giá rẻ uy tín trên toàn quốc"
+                                    src="../images/ui_images/logo.jpg">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <img style="width:100%;margin-top:25px;" alt="Cam kết dịch vụ" src="../images/ui_images/promise.png">
+                    </div>
+                    <div class="col-xs-12 col-md-3">
+                        <div class="hotline">
+                            <div class="name">Tư vấn lắp đặt camera</div>
+                            <div class="clear"></div>
+                            <div class="phone">
+                                <a href="tel:0328826810">0328826810</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login / Register Modal-->
+    <div class="modal fade login-register-form" role="dialog">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span class="fa fa-remove"></span>
+                    </button>
+                    <ul class="nav nav-tabs ">
+                        <li class="active"><a id="tabLogin" data-toggle="tab" href="#login-form"> Đăng nhập <span class="fa fa-user"></span></a></li>
+                        <li><a id="tabRegister" data-toggle="tab" href="#registration-form"> Đăng kí <span class="fa fa-pencil"></span></a></li>
+                    </ul>
+                </div>
+                <div class="modal-body">
+                    <div class="tab-content">
+                        <div id="login-form" class="tab-pane fade in active">
+                            <div class="alert alert-danger print-error-msg-login" style="display:none">
+                                <ul></ul>
+                            </div>
+                            <form action="http://localhost/CameraGiamSat1/user/login" id="myFormLogin" method="POST"
+                                accept-charset="UTF-8">
+                                <input type="hidden" name="_token" value="CbXqEDJr2pidIbBfqw5sz1TR99Mg2SnhQpiOr2kf">
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" class="form-control" placeholder="Enter email" name="email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pwd">Mật khẩu:</label>
+                                    <input type="password" class="form-control" placeholder="Enter password" name="password">
+                                </div>
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" name="remember"> Ghi nhớ</label>
+                                        <a data-toggle="tab" href="#forgot-form" for="pwd">Quên mật khẩu</a>
+                                    </div>
+                                </div>
+                                <button type="submit" id="btnLogin" class="btn btn-default">Đăng nhập</button>
+                            </form>
+                        </div>
+                        <div id="forgot-form" class="tab-pane fade in fade">
+                            <div class="alert alert-danger print-error-msg-forgot" style="display:none">
+                                <ul></ul>
+                            </div>
+                            <form action="http://localhost/CameraGiamSat1/password/email" id="forgot-form1" method="POST"
+                                accept-charset="UTF-8">
+                                <input type="hidden" name="_token" value="CbXqEDJr2pidIbBfqw5sz1TR99Mg2SnhQpiOr2kf">
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" class="form-control" placeholder="Enter email" name="email">
+                                </div>
+                                <button type="submit" class="btn btn-default">Xác nhận</button>
+                            </form>
+                        </div>
+                        <!-- <div id="registration-form" class="tab-pane fade">
+                            <div class="alert alert-danger print-error-msg" style="display:none">
+                                <ul></ul>
+                            </div>
+                            <!--  -->
+                            <form id="myForm" action="http://localhost/CameraGiamSat1/user/add" method="post"
+                                accept-charset="UTF-8">
+                                <input type="hidden" name="_token" value="CbXqEDJr2pidIbBfqw5sz1TR99Mg2SnhQpiOr2kf">
+                                <div class="form-group">
+                                    <label for="name">Tên bạn:</label>
+                                    <input type="text" class="form-control" placeholder="Enter your name" name="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="newemail">Email:</label>
+                                    <input type="email" class="form-control" placeholder="Enter new email" name="email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="newpwd">Mật khẩu:</label>
+                                    <input type="password" class="form-control" placeholder="New password" name="password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="newpwd">Nhập lại Mật khẩu:</label>
+                                    <input type="password" class="form-control" placeholder="New password" name="passwordAgain">
+                                </div>
+                                <div class="form-group">
+                                    <label for="newpwd">Số điện thoại:</label>
+                                    <input type="text" class="form-control" placeholder="Số điện thoại" name="numberPhone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="newpwd">Địa chỉ:</label>
+                                    <input type="text" class="form-control" placeholder="Địa chỉ" name="address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="newemail">Thành phố:</label>
+                                    <select class="form-control" id="sel1" name="id_tp">
+                                        <option value="1">Hà nội</option>
+                                        <option value="2">TP. Hồ Chí Minh</option>
+                                        <option value="3">Hòa Bình</option>
+                                        <option value="4">Hà Giang</option>
+                                        <option value="5">Lào Cai</option>
+                                        <option value="6">Sơn La</option>
+                                        <option value="7">Điện Biên</option>
+                                        <option value="8">Lạng Sơn</option>
+                                        <option value="9">Cao Bằng</option>
+                                        <option value="10">Tuyên Quang</option>
+                                        <option value="11">Yên Bái</option>
+                                        <option value="12">Ninh Bình</option>
+                                        <option value="13">TP. Hải Phòng</option>
+                                        <option value="14">Quảng Ninh</option>
+                                        <option value="15">Hà Tây</option>
+                                        <option value="16">Thái Bình</option>
+                                        <option value="17">Thanh Hóa</option>
+                                        <option value="18">Nghệ An</option>
+                                        <option value="19">Hà Tĩnh</option>
+                                        <option value="20">Đắc Lắc</option>
+                                        <option value="21">Quảng Bình</option>
+                                        <option value="22">Quảng Trị</option>
+                                        <option value="23">TP. Huế</option>
+                                        <option value="24">Quảng Ngãi</option>
+                                        <option value="25">Bình Định</option>
+                                        <option value="26">Phú Yên</option>
+                                        <option value="27">Khánh Hòa</option>
+                                        <option value="28">Gia Lai</option>
+                                        <option value="29">Đồng Nai</option>
+                                        <option value="30">Bình Thuận</option>
+                                        <option value="31">Lâm Đồng</option>
+                                        <option value="32">Bà Rịa - Vũng Tàu</option>
+                                        <option value="33">Tây Ninh</option>
+                                        <option value="34">Đồng Tháp</option>
+                                        <option value="35">Ninh Thuận</option>
+                                        <option value="36">Vĩnh Long</option>
+                                        <option value="37">TP. Cần Thơ</option>
+                                        <option value="38">Long An</option>
+                                        <option value="39">Tiền Giang</option>
+                                        <option value="40">Trà Vinh</option>
+                                        <option value="41">Bến Tre</option>
+                                        <option value="42">An Giang</option>
+                                        <option value="43">Kiên Giang</option>
+                                        <option value="44">Lai Châu</option>
+                                        <option value="45">Sóc Trăng</option>
+                                        <option value="46">Đắc Nông</option>
+                                        <option value="47">Phú Thọ</option>
+                                        <option value="48">Vĩnh Phúc</option>
+                                        <option value="49">Bắc Giang</option>
+                                        <option value="50">Thái Nguyên</option>
+                                        <option value="51">Bắc Cạn</option>
+                                        <option value="52">Hải Dương</option>
+                                        <option value="53">Hưng Yên</option>
+                                        <option value="54">Nam Định</option>
+                                        <option value="55">Hà Nam</option>
+                                        <option value="56">Quảng Nam</option>
+                                        <option value="57">TP. Đà nẵng</option>
+                                        <option value="58">Bình Dương</option>
+                                        <option value="59">Bình Phước</option>
+                                        <option value="60">Cà Mau</option>
+                                        <option value="61">Bạc Liêu</option>
+                                        <option value="62">Bắc Ninh</option>
+                                    </select>
+                                </div>
+                                <button type="submit" id="btnReg" class="btn btn-default">Đăng kí</button>
+                            </form>
+                        </div> -->
+
+                    </div>
+                </div>
+                <!--                                    <div class="modal-footer">-->
+                <!--                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+                <!--                                    </div>-->
+            </div>
+        </div>
+    </div>
+    <div id="wait" style="display:none;width:69px;height:89px;position:absolute;top:20%;left:50%;padding:2px; z-index: 99999">
+        <img src="http://localhost/CameraGiamSat1/../images/ui_images/ajax-loading.gif" width="64" height="64">
+    </div>
+    <style type="text/css">
+        .modal-header {
+            padding: 0;
+        }
+
+        .modal-header .close {
+            padding: 10px 15px;
+        }
+
+        .modal-header ul {
+            border: none;
+        }
+
+        .modal-header ul li {
+            margin: 0;
+        }
+
+        .modal-header ul li a {
+            border: none;
+            border-radius: 0;
+        }
+
+        .modal-header ul li.active a {
+            color: #e12f27;
+        }
+
+        .modal-header ul li a:hover {
+            border: none;
+        }
+
+        .modal-header ul li a span {
+            margin-left: 10px;
+        }
+
+        .modal-body .form-group {
+            margin-bottom: 10px;
+        }
+    <!-- Menu -->
+    <div class="container-fluid">
+        <div class="row hidden-md hidden-lg">
+            <nav class="navbar navbar-inverse navbar-fixed-top custom-navbar">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="http://localhost/CameraGiamSat1">
+                            <img alt="Camera FPT Việt Nam tự hào Nhà cung cấp thiết bị camera giám sát giá rẻ uy tín trên toàn quốc"
+                                src="http://fptcamera.vn/resources/ui_images/client/background/logo_mobile.png">
+                        </a>
+                        <div class="navbar-brand" id="top-hotline" style="float:right;">
+                            <div class="name">
+                                <a class="fa fa-user" href="#" data-toggle="modal" data-target=".login-register-form">
+                                    Đăng nhập</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" aria-expanded="false" id="bs-example-navbar-collapse-1">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                            aria-expanded="true" style="position: fixed; top:40px; right: 0; border: none; padding: 3px; margin-right: 5px;">
+                            <i class="fa fa-times-circle" style="font-size: 25px;"></i>
+                        </button>
+                        <ul class="nav navbar-nav">
+                            <div class="name">
+                                <a class="dropdown-toggle" href="JavaScript::void(0)" id="menu1" type="button"
+                                    data-toggle="dropdown">Kiểm tra đơn hàng
+                                    <span class="caret"></span></a>
+                                <div class="dropdown-menu" role="menu" aria-labelledby="menu1" style="padding: 5px">
+                                    <input id="code_order_search_coll" class="form-control" placeholder="Nhập mã đơn hàng"
+                                        type="text" name="code_order" style="color: red">
+                                    <button type="button" class="form-control btn btn-danger" id="btnKiemTraDonHang_coll">
+                                        Kiểm tra </button>
+                                </div>
+                            </div>
+                            <li><a href="http://localhost/CameraGiamSat1/category/1/1"><img src="http://localhost/CameraGiamSat1/../images/danh-muc-san-pham/lap-dat-camera-tron-bo.png">&nbsp;&nbsp;Camera
+                                    trọn bộ 1</a></li>
+                            <li><a href="http://localhost/CameraGiamSat1/category/16/1"><img src="http://localhost/CameraGiamSat1/../images/danh-muc-san-pham/camera-giam-sat.png">&nbsp;&nbsp;Camera
+                                    giám sát </a></li>
+                            <li><a href="http://localhost/CameraGiamSat1/category/50/1"><img src="http://localhost/CameraGiamSat1/../images/danh-muc-san-pham/dau-ghi-hinh-camera-quan-sat.png">&nbsp;&nbsp;Đầu
+                                    ghi hình camera </a></li>
+                            <li><a href="http://localhost/CameraGiamSat1/category/76/1"><img src="http://localhost/CameraGiamSat1/../images/danh-muc-san-pham/phu-kien-camera.png">&nbsp;&nbsp;Phụ
+                                    kiện camera </a></li>
+                            <li><a href="http://localhost/CameraGiamSat1/category/92/1"><img src="http://localhost/CameraGiamSat1/../images/danh-muc-san-pham/camera-thiet-bi-an-ninh.png">&nbsp;&nbsp;Thiết
+                                    bị an ninh </a></li>
+                            <li><a href="http://localhost/CameraGiamSat1/category/98/1"><img src="http://localhost/CameraGiamSat1/../images/danh-muc-san-pham/may-cham-cong-gia-re.png">&nbsp;&nbsp;Máy
+                                    chấm công </a></li>
+                            <li><a href="http://localhost/CameraGiamSat1/category/108/1"><img src="http://localhost/CameraGiamSat1/../images/danh-muc-san-pham/78-32.png">&nbsp;&nbsp;Tổng
+                                    đài - Bộ đàm </a></li>
+                            <li><a href="http://localhost/CameraGiamSat1/category/112/1"><img src="http://localhost/CameraGiamSat1/../images/danh-muc-san-pham/thiet-bi-van-phong.png">&nbsp;&nbsp;Thiết
+                                    bị văn phòng </a></li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-fluid -->
+            </nav>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $('#btnKiemTraDonHang_coll').click(function () {
+            location.href = 'http://localhost/CameraGiamSat1/kiem-tra-don-hang/' + $('#code_order_search_coll').val();
+        })
+    </script> <!-- End Menu -->
+    <div class="container menu_bg">
+        <div class="row menu_bg">
+            <div class="col-xs-12 menu_bg">
+                <div class="row">
+                    <div class="col-md-4 col-lg-3 hidden-xs hidden-sm" style="padding-right:0;">
+                        <div id="prd-cate-list">
+                            <div class="prd-cate-header">
+                                <span>Danh mục sản phẩm<i class="fa fa-chevron-circle-down"></i></span>
+                            </div>
+                            <ul class="sub-page">
+                                <ul>
+                                    <li><a href="http://localhost/CameraGiamSat1/category/1/1"><img alt="Camera trọn bộ  1"
+                                                src="http://localhost/CameraGiamSat1/../images/danh-muc-san-pham/lap-dat-camera-tron-bo.png"><span
+                                                class="mc_title">Camera trọn bộ 1<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                        <ul>
+                                            <li><a href="http://localhost/CameraGiamSat1/category/2/1"><img alt="Trọn bộ camera giá rẻ 1"
+                                                        src=""><span class="mc_title">Trọn bộ camera giá rẻ 1<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                <ul>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/3/1"><img alt="Trọn bộ 1 Camera giá rẻ"
+                                                                src=""><span class="mc_title">Trọn bộ 1 Camera giá rẻ<i
+                                                                    class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/4/1"><img alt="Trọn bộ 2 camera giá rẻ"
+                                                                src=""><span class="mc_title">Trọn bộ 2 camera giá rẻ<i
+                                                                    class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/5/1"><img alt="Trọn bộ 3 Camera giá rẻ"
+                                                                src=""><span class="mc_title">Trọn bộ 3 Camera giá rẻ<i
+                                                                    class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/6/1"><img alt="Trọn bộ 4 Camera giá rẻ"
+                                                                src=""><span class="mc_title">Trọn bộ 4 Camera giá rẻ<i
+                                                                    class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                </ul>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li><a href="http://localhost/CameraGiamSat1/category/7/1"><img alt="Trọn bộ camera HD"
+                                                        src=""><span class="mc_title">Trọn bộ camera HD<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                <ul>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/8/1"><img alt="Trọn bộ 1 Camera HD"
+                                                                src=""><span class="mc_title">Trọn bộ 1 Camera HD<i
+                                                                    class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/9/1"><img alt="Trọn bộ 2 Camera HD"
+                                                                src=""><span class="mc_title">Trọn bộ 2 Camera HD<i
+                                                                    class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/10/1"><img
+                                                                alt="Trọn bộ 3 Camera HD" src=""><span class="mc_title">Trọn
+                                                                bộ 3 Camera HD<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/11/1"><img
+                                                                alt="Trọn bộ 4 Camera HD" src=""><span class="mc_title">Trọn
+                                                                bộ 4 Camera HD<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                </ul>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li><a href="http://localhost/CameraGiamSat1/category/12/1"><img alt="Camera Nhập khẩu"
+                                                        src=""><span class="mc_title">Camera Nhập khẩu<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                <ul>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/13/1"><img
+                                                                alt="Bộ 2 Camera HIKVISION" src=""><span class="mc_title">Bộ
+                                                                2 Camera HIKVISION<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/14/1"><img
+                                                                alt="Lắp 1 Camera HIKVISION" src=""><span class="mc_title">Lắp
+                                                                1 Camera HIKVISION<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/15/1"><img
+                                                                alt="Bộ camera KCE HÀN QUỐC" src=""><span class="mc_title">Bộ
+                                                                camera KCE HÀN QUỐC<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                </ul>
+                                                <div class="clear"></div>
+                                            </li>
+                                        </ul>
+                                        <div class="clear"></div>
+                                    </li>
+                                    <li><a href="http://localhost/CameraGiamSat1/category/16/1"><img alt="Camera giám sát "
+                                                src="http://localhost/CameraGiamSat1/../images/danh-muc-san-pham/camera-giam-sat.png"><span
+                                                class="mc_title">Camera giám sát <i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                        <ul>
+                                            <li><a href="http://localhost/CameraGiamSat1/category/17/1"><img alt="Camera theo hãng"
+                                                        src=""><span class="mc_title">Camera theo hãng<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                <ul>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/18/1"><img
+                                                                alt="Camera Dahua" src=""><span class="mc_title">Camera
+                                                                Dahua<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/19/1"><img
+                                                                alt="Camera Vantech" src=""><span class="mc_title">Camera
+                                                                Vantech<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/20/1"><img
+                                                                alt="Camera Hikvision" src=""><span class="mc_title">Camera
+                                                                Hikvision<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/21/1"><img
+                                                                alt="Camera Benco" src=""><span class="mc_title">Camera
+                                                                Benco<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/22/1"><img
+                                                                alt="Camera Kbvision" src=""><span class="mc_title">Camera
+                                                                Kbvision<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/23/1"><img
+                                                                alt="Camera SAMSUNG" src=""><span class="mc_title">Camera
+                                                                SAMSUNG<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/24/1"><img
+                                                                alt="Camera KCE" src=""><span class="mc_title">Camera
+                                                                KCE<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/25/1"><img
+                                                                alt="Camera Panasonic" src=""><span class="mc_title">Camera
+                                                                Panasonic<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/26/1"><img
+                                                                alt="Camera HDPRO" src=""><span class="mc_title">Camera
+                                                                HDPRO<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/27/1"><img
+                                                                alt="Camera giá rẻ" src=""><span class="mc_title">Camera
+                                                                giá rẻ<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/28/1"><img
+                                                                alt="Camera SPYEYE" src=""><span class="mc_title">Camera
+                                                                SPYEYE<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/29/1"><img
+                                                                alt="Camera Questek" src=""><span class="mc_title">Camera
+                                                                Questek<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                </ul>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li><a href="http://localhost/CameraGiamSat1/category/30/1"><img alt="Camera theo loại"
+                                                        src=""><span class="mc_title">Camera theo loại<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                <ul>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/31/1"><img
+                                                                alt="Camera Analog" src=""><span class="mc_title">Camera
+                                                                Analog<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/32/1"><img
+                                                                alt="Camera AHD" src=""><span class="mc_title">Camera
+                                                                AHD<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/33/1"><img
+                                                                alt="Camera IP" src=""><span class="mc_title">Camera IP<i
+                                                                    class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/34/1"><img
+                                                                alt="Camera HDCVI" src=""><span class="mc_title">Camera
+                                                                HDCVI<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/35/1"><img
+                                                                alt="Camera HD-SDI" src=""><span class="mc_title">Camera
+                                                                HD-SDI<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/36/1"><img
+                                                                alt="Camera HD-TVI" src=""><span class="mc_title">Camera
+                                                                HD-TVI<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                </ul>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li><a href="http://localhost/CameraGiamSat1/category/37/1"><img alt="Camera theo chức năng"
+                                                        src=""><span class="mc_title">Camera theo chức năng<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                <ul>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/38/1"><img
+                                                                alt="Camera quan sát" src=""><span class="mc_title">Camera
+                                                                quan sát<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/39/1"><img
+                                                                alt="Camera Không Dây" src=""><span class="mc_title">Camera
+                                                                Không Dây<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/40/1"><img
+                                                                alt="Camera Wifi" src=""><span class="mc_title">Camera
+                                                                Wifi<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/41/1"><img
+                                                                alt="Camera Zoom" src=""><span class="mc_title">Camera
+                                                                Zoom<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/42/1"><img
+                                                                alt="Camera quay quét" src=""><span class="mc_title">Camera
+                                                                quay quét<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/43/1"><img
+                                                                alt="Camera Thân" src=""><span class="mc_title">Camera
+                                                                Thân<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/44/1"><img
+                                                                alt="Camera Dome" src=""><span class="mc_title">Camera
+                                                                Dome<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/45/1"><img
+                                                                alt="Camera ngụy trang" src=""><span class="mc_title">Camera
+                                                                ngụy trang<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/46/1"><img
+                                                                alt="Camera hành trình" src=""><span class="mc_title">Camera
+                                                                hành trình<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/47/1"><img
+                                                                alt="Camera POC" src=""><span class="mc_title">Camera
+                                                                POC<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/48/1"><img
+                                                                alt="Camera POE" src=""><span class="mc_title">Camera
+                                                                POE<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/49/1"><img
+                                                                alt="Camera nhìn đêm có màu" src=""><span class="mc_title">Camera
+                                                                nhìn đêm có màu<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                </ul>
+                                                <div class="clear"></div>
+                                            </li>
+                                        </ul>
+                                        <div class="clear"></div>
+                                    </li>
+                                    <li><a href="http://localhost/CameraGiamSat1/category/50/1"><img alt="Đầu ghi hình camera "
+                                                src="http://localhost/CameraGiamSat1/../images/danh-muc-san-pham/dau-ghi-hinh-camera-quan-sat.png"><span
+                                                class="mc_title">Đầu ghi hình camera <i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                        <ul>
+                                            <li><a href="http://localhost/CameraGiamSat1/category/51/1"><img alt="Đầu ghi hình theo hãng"
+                                                        src=""><span class="mc_title">Đầu ghi hình theo hãng<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                <ul>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/52/1"><img
+                                                                alt="Đầu ghi hình Vantech" src=""><span class="mc_title">Đầu
+                                                                ghi hình Vantech<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/53/1"><img
+                                                                alt="Đầu ghi hình BENCO" src=""><span class="mc_title">Đầu
+                                                                ghi hình BENCO<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/54/1"><img
+                                                                alt="Đầu ghi hình Questek" src=""><span class="mc_title">Đầu
+                                                                ghi hình Questek<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/55/1"><img
+                                                                alt="Đầu ghi hình Dahua" src=""><span class="mc_title">Đầu
+                                                                ghi hình Dahua<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/56/1"><img
+                                                                alt="Đầu ghi hình SPYEYE" src=""><span class="mc_title">Đầu
+                                                                ghi hình SPYEYE<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/57/1"><img
+                                                                alt="Đầu ghi hình Hikvision" src=""><span class="mc_title">Đầu
+                                                                ghi hình Hikvision<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/58/1"><img
+                                                                alt="Đầu ghi hình HDPRO" src=""><span class="mc_title">Đầu
+                                                                ghi hình HDPRO<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/59/1"><img
+                                                                alt="Đầu Ghi Hình KCE" src=""><span class="mc_title">Đầu
+                                                                Ghi Hình KCE<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/60/1"><img
+                                                                alt="Đầu ghi hình giá rẻ" src=""><span class="mc_title">Đầu
+                                                                ghi hình giá rẻ<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/61/1"><img
+                                                                alt="Đầu ghi hình Kbvision" src=""><span class="mc_title">Đầu
+                                                                ghi hình Kbvision<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/62/1"><img
+                                                                alt="Đầu ghi hình Samsung" src=""><span class="mc_title">Đầu
+                                                                ghi hình Samsung<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                </ul>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li><a href="http://localhost/CameraGiamSat1/category/63/1"><img alt="Đầu ghi hình theo loại"
+                                                        src=""><span class="mc_title">Đầu ghi hình theo loại<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                <ul>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/64/1"><img
+                                                                alt="Đầu ghi hình Analog" src=""><span class="mc_title">Đầu
+                                                                ghi hình Analog<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/65/1"><img
+                                                                alt="Đầu ghi hình AHD" src=""><span class="mc_title">Đầu
+                                                                ghi hình AHD<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/66/1"><img
+                                                                alt="Đầu ghi hình IP" src=""><span class="mc_title">Đầu
+                                                                ghi hình IP<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/67/1"><img
+                                                                alt="Đầu ghi hình HDCVI" src=""><span class="mc_title">Đầu
+                                                                ghi hình HDCVI<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/68/1"><img
+                                                                alt="Đầu ghi hình HD-SDI" src=""><span class="mc_title">Đầu
+                                                                ghi hình HD-SDI<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/69/1"><img
+                                                                alt="Đầu ghi hình HD-TVI" src=""><span class="mc_title">Đầu
+                                                                ghi hình HD-TVI<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                </ul>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li><a href="http://localhost/CameraGiamSat1/category/70/1"><img alt="Đầu ghi hình theo kênh"
+                                                        src=""><span class="mc_title">Đầu ghi hình theo kênh<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                <ul>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/71/1"><img
+                                                                alt="Đầu ghi hình 4 Kênh" src=""><span class="mc_title">Đầu
+                                                                ghi hình 4 Kênh<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/72/1"><img
+                                                                alt="Đầu ghi hình 8 Kênh" src=""><span class="mc_title">Đầu
+                                                                ghi hình 8 Kênh<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/73/1"><img
+                                                                alt="Đầu ghi hình 16 Kênh" src=""><span class="mc_title">Đầu
+                                                                ghi hình 16 Kênh<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/74/1"><img
+                                                                alt="Đầu ghi hình 24 Kênh" src=""><span class="mc_title">Đầu
+                                                                ghi hình 24 Kênh<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/75/1"><img
+                                                                alt="Đầu ghi hình 32 Kênh" src=""><span class="mc_title">Đầu
+                                                                ghi hình 32 Kênh<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                </ul>
+                                                <div class="clear"></div>
+                                            </li>
+                                        </ul>
+                                        <div class="clear"></div>
+                                    </li>
+                                    <li><a href="http://localhost/CameraGiamSat1/category/76/1"><img alt="Phụ kiện camera "
+                                                src="http://localhost/CameraGiamSat1/../images/danh-muc-san-pham/phu-kien-camera.png"><span
+                                                class="mc_title">Phụ kiện camera <i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                        <ul>
+                                            <li><a href="http://localhost/CameraGiamSat1/category/77/1"><img alt="Ổ lưu dữ liệu Camera"
+                                                        src=""><span class="mc_title">Ổ lưu dữ liệu Camera<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                <ul>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/78/1"><img
+                                                                alt="Ổ lưu trữ 80G" src=""><span class="mc_title">Ổ lưu
+                                                                trữ 80G<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/79/1"><img
+                                                                alt="Ổ lưu trữ 160G" src=""><span class="mc_title">Ổ
+                                                                lưu trữ 160G<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/80/1"><img
+                                                                alt="Ổ Lưu dữ liệu 250G" src=""><span class="mc_title">Ổ
+                                                                Lưu dữ liệu 250G<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/81/1"><img
+                                                                alt="Ổ lưu dữ liệu 500G" src=""><span class="mc_title">Ổ
+                                                                lưu dữ liệu 500G<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/82/1"><img
+                                                                alt="HDD dung lượng 1T" src=""><span class="mc_title">HDD
+                                                                dung lượng 1T<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/83/1"><img
+                                                                alt="HDD dung lượng 2T" src=""><span class="mc_title">HDD
+                                                                dung lượng 2T<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/84/1"><img
+                                                                alt="HDD dung lượng 3000G" src=""><span class="mc_title">HDD
+                                                                dung lượng 3000G<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                </ul>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li><a href="http://localhost/CameraGiamSat1/category/85/1"><img alt="Phụ kiện chính hãng"
+                                                        src=""><span class="mc_title">Phụ kiện chính hãng<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                <ul>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/86/1"><img
+                                                                alt="Nguồn Camera" src=""><span class="mc_title">Nguồn
+                                                                Camera<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/87/1"><img
+                                                                alt="Vỏ bảo vệ Camera" src=""><span class="mc_title">Vỏ
+                                                                bảo vệ Camera<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/88/1"><img
+                                                                alt="Dây cáp Camera" src=""><span class="mc_title">Dây
+                                                                cáp Camera<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/89/1"><img
+                                                                alt="Jack kết nối Camera" src=""><span class="mc_title">Jack
+                                                                kết nối Camera<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/90/1"><img
+                                                                alt="Chân đế xoay camera" src=""><span class="mc_title">Chân
+                                                                đế xoay camera<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                </ul>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li><a href="http://localhost/CameraGiamSat1/category/91/1"><img alt="Bộ lưu điện UPS"
+                                                        src=""><span class="mc_title">Bộ lưu điện UPS<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                <ul>
+                                                </ul>
+                                                <div class="clear"></div>
+                                            </li>
+                                        </ul>
+                                        <div class="clear"></div>
+                                    </li>
+                                    <li><a href="http://localhost/CameraGiamSat1/category/92/1"><img alt="Thiết bị an ninh "
+                                                src="http://localhost/CameraGiamSat1/../images/danh-muc-san-pham/camera-thiet-bi-an-ninh.png"><span
+                                                class="mc_title">Thiết bị an ninh <i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                        <ul>
+                                            <li><a href="http://localhost/CameraGiamSat1/category/93/1"><img alt="Thiết bị chống trộm"
+                                                        src=""><span class="mc_title">Thiết bị chống trộm<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                <ul>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/94/1"><img
+                                                                alt="Bộ báo trộm thông minh" src=""><span class="mc_title">Bộ
+                                                                báo trộm thông minh<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                </ul>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li><a href="http://localhost/CameraGiamSat1/category/95/1"><img alt="Chuông cửa màn hình"
+                                                        src=""><span class="mc_title">Chuông cửa màn hình<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                <ul>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/96/1"><img
+                                                                alt="Chuông cửa camera" src=""><span class="mc_title">Chuông
+                                                                cửa camera<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/97/1"><img
+                                                                alt="Màn hình" src=""><span class="mc_title">Màn hình<i
+                                                                    class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                </ul>
+                                                <div class="clear"></div>
+                                            </li>
+                                        </ul>
+                                        <div class="clear"></div>
+                                    </li>
+                                    <li><a href="http://localhost/CameraGiamSat1/category/98/1"><img alt="Máy chấm công "
+                                                src="http://localhost/CameraGiamSat1/../images/danh-muc-san-pham/may-cham-cong-gia-re.png"><span
+                                                class="mc_title">Máy chấm công <i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                        <ul>
+                                            <li><a href="http://localhost/CameraGiamSat1/category/99/1"><img alt="Theo hãng SX"
+                                                        src=""><span class="mc_title">Theo hãng SX<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                <ul>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/100/1"><img
+                                                                alt="RONALD JACK" src=""><span class="mc_title">RONALD
+                                                                JACK<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/101/1"><img
+                                                                alt="WISE EYE" src=""><span class="mc_title">WISE EYE<i
+                                                                    class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                </ul>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li><a href="http://localhost/CameraGiamSat1/category/102/1"><img alt="Theo loại ứng dụng"
+                                                        src=""><span class="mc_title">Theo loại ứng dụng<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                <ul>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/103/1"><img
+                                                                alt="Bằng vân tay" src=""><span class="mc_title">Bằng
+                                                                vân tay<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/104/1"><img
+                                                                alt="Vân tay &amp; Thẻ từ cảm ứng" src=""><span class="mc_title">Vân
+                                                                tay &amp; Thẻ từ cảm ứng<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                </ul>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li><a href="http://localhost/CameraGiamSat1/category/105/1"><img alt="Số lượng quản lý"
+                                                        src=""><span class="mc_title">Số lượng quản lý<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                <ul>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/106/1"><img
+                                                                alt="500 Vân tay" src=""><span class="mc_title">500 Vân
+                                                                tay<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/107/1"><img
+                                                                alt="3000 Vân tay" src=""><span class="mc_title">3000
+                                                                Vân tay<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                </ul>
+                                                <div class="clear"></div>
+                                            </li>
+                                        </ul>
+                                        <div class="clear"></div>
+                                    </li>
+                                    <li><a href="http://localhost/CameraGiamSat1/category/108/1"><img alt="Tổng đài - Bộ đàm "
+                                                src="http://localhost/CameraGiamSat1/../images/danh-muc-san-pham/78-32.png"><span
+                                                class="mc_title">Tổng đài - Bộ đàm <i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                        <ul>
+                                            <li><a href="http://localhost/CameraGiamSat1/category/109/1"><img alt="Bộ đàm cầm tay"
+                                                        src=""><span class="mc_title">Bộ đàm cầm tay<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                <ul>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/110/1"><img
+                                                                alt="Bộ đàm IRADIO" src=""><span class="mc_title">Bộ
+                                                                đàm IRADIO<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/111/1"><img
+                                                                alt="Bộ đàm KENWOOD" src=""><span class="mc_title">Bộ
+                                                                đàm KENWOOD<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                </ul>
+                                                <div class="clear"></div>
+                                            </li>
+                                        </ul>
+                                        <div class="clear"></div>
+                                    </li>
+                                    <li><a href="http://localhost/CameraGiamSat1/category/112/1"><img alt="Thiết bị văn phòng "
+                                                src="http://localhost/CameraGiamSat1/../images/danh-muc-san-pham/thiet-bi-van-phong.png"><span
+                                                class="mc_title">Thiết bị văn phòng <i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                        <ul>
+                                            <li><a href="http://localhost/CameraGiamSat1/category/113/1"><img alt="Máy chiếu"
+                                                        src=""><span class="mc_title">Máy chiếu<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                <ul>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/114/1"><img
+                                                                alt="Máy chiếu SONY" src=""><span class="mc_title">Máy
+                                                                chiếu SONY<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                </ul>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li><a href="http://localhost/CameraGiamSat1/category/115/1"><img alt="Phụ kiện máy chiếu"
+                                                        src=""><span class="mc_title">Phụ kiện máy chiếu<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                <ul>
+                                                    <li><a href="http://localhost/CameraGiamSat1/category/116/1"><img
+                                                                alt="Màn chiếu treo tường" src=""><span class="mc_title">Màn
+                                                                chiếu treo tường<i class="fa fa-chevron-right hidden-md"></i></span></a>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                </ul>
+                                                <div class="clear"></div>
+                                            </li>
+                                        </ul>
+                                        <div class="clear"></div>
+                                    </li>
+                                </ul>
+                                <div class="clear"></div>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-8 col-lg-9">
+                        <div class="row">
+                            <div class="col-xs-12 col-lg-8" style="padding:0;">
+                                <div id="searchform">
+                                    <form action="http://localhost/CameraGiamSat1/search-product" accept-charset="utf-8"
+                                        method="get">
+                                        <img style="display: none;" class="loader" src="http://fptcamera.vn/resources/ui_images/client/background/loader.gif">
+                                        <input type="text" name="key" value="" id="searchbutton" class="searchfield"
+                                            onkeyup="lookup()" autocomplete="off" placeholder="Tìm kiếm sản phẩm ...">
+                                        <input type="submit" name="submit_search" value="Tìm kiếm" id="search_smt"
+                                            class="searchbutton">
+                                        <div class="clear"></div>
+                                        <div class="autoSuggestionsList_l" id="autoSuggestionsList">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 hidden-xs hidden-sm hidden-md" style="padding-left:0;">
+                                <button type="button" class="btn btn-danger button-support" data-toggle="modal"
+                                    data-target="#supportonlineModal"><img src="./public/images/ui_images/yahoo-smile.png">&nbsp;Hỗ
+                                    trợ trực tuyến</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>

@@ -1,0 +1,87 @@
+
+
+/* List Danh mục */
+
+
+#listDanhMuc ul.noiDungDanhMuc{
+    list-style:none;
+    display:none;
+    z-index: 1000;
+    position: absolute;
+}
+#listDanhMuc:hover ul.noiDungDanhMuc{
+    display: block;
+        
+}
+ .headerDangNhap{
+        color: #FF7F50;
+    }
+ #formDangNhap{
+        padding: 30px;
+    }
+table.cart{
+    width: 100%;
+    margin-top: 12px;
+}
+.header #headercart{
+    font-size: 16px;
+}
+.cart th {
+    background: #ec252d;
+    font-weight: bold;
+    color: #fff;
+}
+.cart th, .cart td {
+    padding: 10px;
+    vertical-align: middle;
+    border: 1px solid #d0d0d0;
+}
+#cartthanhtoan{
+    width: 100%;
+    border: #d0d0d0 solid 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#cartthanhtoan tbody th ,#cartthanhtoan tbody td{
+    border:#8d8b8b solid 1px;
+    padding: 10px;
+
+}
+.header2 {
+    margin: 5px 0;
+    position: relative;
+    padding-bottom: 5px;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    float: left;
+}
+.nav-tabs.custom-tabs2 > li.active > a {
+    background: #ec252d;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+}
+.nav-tabs.custom-tabs2 > li > a {
+    color: #000;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    line-height: 22px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+}
+.prd-body{
+    margin-bottom: 20px;
+}
+.prd-desc .detail-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ec252d;
+}
+#cart img.cart_img {
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+}
