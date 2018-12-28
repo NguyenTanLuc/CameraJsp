@@ -24,6 +24,8 @@ public class NavTab {
 			int status = set.getInt(5);
 			tab.add(new Nav_tab(id, name, id_slide, img, status));
 		}
+		set.close();
+		statement.close();
 		return tab;
 	}
 
@@ -48,6 +50,8 @@ public class NavTab {
 				
 				listtabProduct.add(product);
 			}
+			rs.close();
+			nav_product.close();
 
 			return listtabProduct;
 		}

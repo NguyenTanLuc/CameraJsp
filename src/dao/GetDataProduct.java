@@ -60,7 +60,10 @@ public class GetDataProduct {
 						.setDetai(StringEscapeUtils.unescapeHtml4(rs.getString("detail_product")))
 						.setThongSo(StringEscapeUtils.unescapeHtml4(rs.getString("digital")))
 						.build();
-		} catch (Exception e) {
+				rs.close();
+				statement.close();
+		} 
+		catch (Exception e) {
 			System.err.println("Loi E: "+e);
 		}
 	return product;

@@ -26,6 +26,8 @@ public class GetDataCategory {
 				
 
 			}
+		rSet.close();
+		statement.close();
 		return list;
 		
 	}
@@ -43,6 +45,8 @@ public class GetDataCategory {
 			int status = rSet.getInt("status");
 			String icon = rSet.getString("icon");
 			catego =new Catelogy(idca, name, id_root, status, icon);
+			rSet.close();
+			statement.close();
 		}catch (Exception e) {
 			System.err.println("Loi GetCategoryByID :"+e);
 		

@@ -29,6 +29,8 @@ public class GetDataUser {
 				User user = new User(name, account, pass, email, address, phone, idGroup, date, status);
 				listUser.add(user);
 			}
+			set.close();
+			statement.close();
 
 		} catch (Exception e) {
 			System.err.println("Loi user connect: " + e);

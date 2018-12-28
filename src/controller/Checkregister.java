@@ -16,6 +16,7 @@ import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationExceptio
 
 import dao.ConectionDB;
 import model.MD5;
+import model.Mail;
 
 /**
  * Servlet implementation class Checkregister
@@ -57,11 +58,12 @@ public class Checkregister extends HttpServlet {
 		String email = request.getParameter("email");
 		String phone = request.getParameter("numberPhone");
 		String date = request.getParameter("ngaysinh");
-		String address = request.getParameter("address");
 		String tp = request.getParameter("id_tp");
+		String address = request.getParameter("address")+tp;
 
 		try {
 			if(dangky(name, account, pass, date, email, phone, address)) {
+				Mail.SendMailVerify(request.getContextPath()+"/VerifyMLC?account"+"="+account);
 				out.println("<script type=\"text/javascript\">");
 				out.println("alert('Đăng kí thành công');");
 				out.println("</script>");
