@@ -166,7 +166,7 @@
                             <i class="fa fa-table nav_icon"></i> <span>Quản lý sản phẩm</span> <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="danhsachsanpham.html"><i class="fa fa-circle-o"></i>
+                            <li><a href="<%=request.getContextPath()%>/ShowProductAdmin?pagerow=0"><i class="fa fa-circle-o"></i>
                                     Tất cả sản phẩm</a></li>
                         </ul>
                     </li>

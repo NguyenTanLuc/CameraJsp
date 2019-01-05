@@ -85,9 +85,46 @@ public class GetDataProduct {
 		}
 		return null;
 	}
+	public static ResultSet getDataMangerProduct (int page) {
+		Connection connection;
+		if (page !=0 ) {
+			page = page-1;
+		}
+		System.out.println(page);
+		try {
+			connection = ConectionDB.getConection();
+			String sql ="SELECT product.*, category.name as namecatogory,category.id_root FROM product INNER JOIN category ON product.id_category = category.id LIMIT ?, 15";
+			PreparedStatement statement = connection.prepareStatement(sql);
+			statement.setInt(1, page * 15);
+			return statement.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public static ResultSet getDataByIdCatogory (int id) {
+		try {
+			Connection con = ConectionDB.getConection();
+			String sql = "SELECT product.*,category.id_root FROM product INNER JOIN category ON category.id = product.id_category WHERE product.id_category = ?";
+			PreparedStatement statement = con.prepareStatement(sql);
+			statement.setInt(1, id);
+			return statement.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+		
+	}
 
 	public static void main(String[] args) throws SQLException {
-		ArrayList<Product> a = getDataProduct();
+		ResultSet set = getDataMangerProduct(3);
+		while (set.next()) {
+			 Product product = GetDataProduct.getProDuctById(set.getInt("id"));
+			System.out.println(product.getIdCategory());
+			
+		}
 //		ResultSet set= getDataSearch("camera");
 //		while(set.next()) {
 //			System.out.println(set.getString(2));

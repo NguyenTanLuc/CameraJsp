@@ -1,4 +1,16 @@
 <%@page import="model.User"%>
+<%@page import="model.Catelogy"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="dao.NavTab"%>
+<%@page import="dao.GetDataCategory"%>
+<%@page import="util.Utils"%>
+<%@page import="java.util.Locale"%>
+<%@page import="dao.GetDataProduct"%>
+<%@page import="model.Product"%>
+<%@page import="java.util.TreeMap"%>
+<%@page import="java.util.Map.Entry"%>
+<%@page import="java.util.Set"%>
+<%@page import="java.util.TreeMap"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -19,7 +31,7 @@
    </head>
    <body>
    <% 
-   if( session.getAttribute("user") == null && session.getAttribute("cart") == null){
+   if( session.getAttribute("user") == null ||session.getAttribute("cart") == null){
 	   response.sendRedirect("cart.jsp");
    }else{
    User user =  (User) session.getAttribute("user");
@@ -226,6 +238,7 @@
                <div class="header">
                   <span>Kiểm tra thông tin nhận hàng</span>
                </div>
+               <form action="">
                <table id="cartthanhtoan" class="hidden-xs hidden-sm">
                   <tbody>
                      <tr>
@@ -268,24 +281,37 @@
                         <td style="vertical-align:top">
                            <span class="circle">3</span>
                            <span style="font-weight:bold;color:#555;">Xác nhận đơn hàng</span>
+                           <form>
                            <table id="cartthanhtoan" class="inside">
                               <tbody>
                                  <tr>
                                     <td colspan="2" class="text_center">Sản phẩm</td>
                                     <td class="text_right">Giá</td>
                                  </tr>
+                                  <%TreeMap<Integer,Integer> map =  (TreeMap<Integer, Integer>) session.getAttribute("cart");
+									if (map == null) map = new TreeMap<Integer, Integer>();%>
+									 <%Set<Entry<Integer, Integer>> setTreeMap = map.entrySet();
+                            		if(setTreeMap.size()!=0){
+                            			double total =0;
+                    	   			 for (Entry<Integer, Integer> entry : setTreeMap) { 
+                    	   				 Product product = GetDataProduct.getProDuctById(entry.getKey());
+                    	    			int quality = entry.getValue();
+                    	    			double price = product.getPrice() * quality;
+                    	    			total += price;
+                    	    %>
                                  <tr>
                                     <td class="text_center">
-                                       <img class="cartthanhtoan_img" style="width: 200px;height: 200px" src="#"
+                                       <img class="cartthanhtoan_img" style="width: 60px;height: 60px" src="public/images/san-pham/<%=product.getImage() %>"
                                           alt="Hình sản phẩm">
                                     </td>
-                                    <td>Tên sản phẩm</td>
+                                    <td><%=product.getName() %></td>
                                     <td class="text_right">
-                                       <span style="display:block;color:red;font-weight:bold;margin: 0 0 5px 0;">0
+                                       <span style="display:block;color:red;font-weight:bold;margin: 0 0 5px 0;"><%=Utils.format(price)%>
                                        VNĐ</span>
-                                       <span>Số lượng: <input type="number" style="width: 15%"></span>
+                                       <span>Số lượng: <%=quality %></span>
                                     </td>
                                  </tr>
+                                      <%}%>
                                  <tr>
                                     <td class="text_right" colspan="1">
                                        <strong>Mã giảm giá:</strong>
@@ -302,144 +328,22 @@
                                     </td>
                                     <td class="text_right" colspan="2">
                                        <span id="tongtien" class="tongtien" style="display:block;color:red;font-weight:bold;">
-                                       0 VNĐ</span>
+                                       <%=Utils.format(total) %> VNĐ</span>
                                     </td>
                                  </tr>
+                                 <%} %>
+                            
                               </tbody>
                            </table>
-                           <input class="btn btn-danger" type=submit value="Mua hàng" style="float:right">
                      <tr class="no-border">
-                        <td colspan="7">
+                        <td colspan="2">
                            <input class="btn btn-warning" type="button" value="Trở về giỏ hàng">
+                           <input class="btn btn-danger" type="submit" method="get" value="Mua hàng" style="float:right">
                         </td>
                      </tr>
                   </tbody>
                </table>
-               <table id="cartthanhtoan" class="hidden-md hidden-lg">
-                  <tbody>
-                     <form id="formThanhToanTiny" action="" method="post" accept-charset="utf-8"></form>
-                     <tr>
-                        <td>
-                           <span class="cartthanhtoan_3_header">Hoàn tất đơn hàng</span>
-                           <input type="hidden" name="id_user" value="25">
-                           <input id="code_order1" type="hidden" name="code_order" value="MDH_1541174655">
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="width:40%;">
-                           <input type="hidden" name="_token" value="QSLPmDTi3IW77m41e0EQqO8kw2TJscIipRQ5XhWO">
-                           <span class="circle">1</span>
-                           <span style="font-weight:bold;color:#555;">Thông tin thanh toán</span>
-                           <div class="form_label_input">
-                              <label style="font-weight:bold" for="fullname">Khách hàng <span class="required"> *
-                              </span></label>
-                              <span><input class="form-control" type="text" name="fullname" value="Tùng Tôm 2"></span>
-                           </div>
-                           <div class="form_label_input">
-                              <label style="font-weight:bold" for="phone">Điện thoại <span class="required"> *
-                              </span></label>
-                              <span><input class="form-control" type="text" name="phone" value="01632635825"></span>
-                           </div>
-                           <div class="form_label_input">
-                              <label style="font-weight:bold" for="email">Email <span class="required"> * </span></label>
-                              <span><input class="form-control" type="text" name="email" value="nguyenwipwa@gmail.com"></span>
-                           </div>
-                           <div class="form_label_input"><label style="font-weight:bold" for="address">Địa chỉ
-                              <span class="required"> * </span></label>
-                              <span>
-                              <input class="form-control" type="text" name="address" value="Gò dưa 1"></span>
-                           </div>
-                           <div class="form_label_input"><label style="font-weight:bold" for="address">Địa chỉ
-                              <span class="required"> * </span></label>
-                              <span>
-                              <input class="form-control" type="text" name="thanhpho" value="TP. Hồ Chí Minh"></span>
-                           </div>
-                           <span class="circle">2</span>
-                           <span style="font-weight:bold;color:#555;">Địa chỉ giao hàng</span>
-                           <div class="form_label_input">
-                              <label style="font-weight:bold;vertical-align:top;" for="ship_address">Địa chỉ
-                              <span class="required"> * </span></label>
-                              <span>
-                              <input class="form-control" type="text" name="ship_address" value="Gò dưa 1, TP. Hồ Chí Minh"></span>
-                           </div>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="vertical-align:top">
-                           <span class="circle">3</span><span style="font-weight:bold;color:#555;">Xác nhận đơn
-                           hàng</span>
-                           <table id="cartthanhtoan" class="inside">
-                              <tbody>
-                                 <tr>
-                                    <td class="text_center">
-                                       <img class="cartthanhtoan_img" src="http://localhost/CameraGiamSat1/public/images/san-pham/bao-trom-khong-day-Karassn-KS-258B.jpg">
-                                    </td>
-                                 </tr>
-                                 <tr>
-                                    <td><b>Báo Trộm Không Dây Karassn KS-258B</b></td>
-                                 </tr>
-                                 <tr>
-                                    <td class="text_right">
-                                       <span>Số lượng: 0</span>
-                                    </td>
-                                 </tr>
-                                 <tr>
-                                    <td class="text_right" colspan="1">
-                                       <strong>Mã giảm giá</strong>
-                                    </td>
-                                 </tr>
-                                 <tr>
-                                    <td class="text_right" colspan="1">
-                                       <a href="javascript::void(0)" onclick="$('.input_keyoff').css('display', 'block'); $(this).hide()">
-                                       Áp mã giảm giá </a>
-                                       <input id="key_sales_off1" class="input_keyoff form-control" style="display: none;"
-                                          name="key_sales_off" placeholder="Nhập mã giảm giá">
-                                    </td>
-                                 </tr>
-                                 <tr>
-                                    <td class="text_right" colspan="1">
-                                       <input onclick="formTiny()" id="btnApdung" class="input_keyoff" style="display: none;"
-                                          type="button" name="" value="Áp dụng">
-                                    </td>
-                                 </tr>
-                                 <tr id="giamgia" class="giamgia" style="display: none;">
-                                    <td class="text_right" colspan="1">
-                                       <strong>Tiền được giảm</strong>
-                                    </td>
-                                 </tr>
-                                 <tr class="giamgia" style="display: none;">
-                                    <td class="text_right" colspan="1">
-                                       <span id="phamTramGiam" class="phamTramGiam" style="display:block;color:green;font-weight:bold;"></span>
-                                    </td>
-                                 </tr>
-                                 <tr class="giamgia" style="display: none;">
-                                    <td class="text_right" colspan="1">
-                                       <span id="tiengiam" class="tiengiam" style="display:block;color:blue;font-weight:bold;">950,000
-                                       VNĐ</span>
-                                    </td>
-                                 </tr>
-                                 <tr>
-                                    <td class="text_right" colspan="2"><strong>Tổng cộng:</strong></td>
-                                 </tr>
-                                 <tr>
-                                    <td class="text_right" colspan="2">
-                                       <span id="tongtien" class="tongtien" style="display:block;color:red;font-weight:bold;">950,000
-                                       VNĐ</span>
-                                    </td>
-                                 </tr>
-                              </tbody>
-                           </table>
-                           <input id="" type="submit" name="submit_cartthanhtoan" value="Mua hàng" class="btn3"
-                              style="float:right">
-                        </td>
-                     </tr>
-                     <tr class="no-border">
-                        <td colspan="7">
-                           <input class="float_left btn2" type="button" value="Trở về giỏ hàng" onclick="location.href='http://localhost/CameraGiamSat1/gio-hang'">
-                        </td>
-                     </tr>
-                  </tbody>
-               </table>
+                </form>
                <%} %>
             </div>
          </div>

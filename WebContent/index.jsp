@@ -118,7 +118,7 @@
 														for (int j2 = 0; j2 < list.size(); j2++) {
 																			if (list.get(j2).getIdRoot() == list.get(j).getId()) {
 													%>
-													<li><a href=""><span
+													<li><a href="<%=request.getContextPath()%>/category.jsp?id=<%=list.get(j2).getId()%>"><span
 															class="nameDanhMuc"><%=list.get(j2).getName()%></span></a>
 														<div class="clear"></div></li>
 													<%

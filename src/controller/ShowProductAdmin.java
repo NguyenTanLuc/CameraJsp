@@ -1,7 +1,8 @@
 package controller;
 
 import java.io.IOException;
-import java.util.TreeMap;
+import java.io.UnsupportedEncodingException;
+import java.sql.ResultSet;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,19 +10,20 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
+import dao.GetDataProduct;
 
 /**
- * Servlet implementation class Updatecart
+ * Servlet implementation class ShowProductAdmin
  */
-@WebServlet("/Updatecart")
-public class Updatecart extends HttpServlet {
+@WebServlet("/ShowProductAdmin")
+public class ShowProductAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Updatecart() {
+    public ShowProductAdmin() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,7 +33,7 @@ public class Updatecart extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		showProduct(request, response);
 	}
 
 	/**
@@ -39,28 +41,18 @@ public class Updatecart extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		todo(request, response);
+		doGet(request, response);
 	}
-	public void todo (HttpServletRequest request ,HttpServletResponse response) throws ServletException,IOException{
-		HttpSession session = request.getSession();
-		TreeMap<Integer, Integer> map = (TreeMap<Integer, Integer>) session.getAttribute("cart");
-		if (map==null) {
-			response.sendRedirect("cart.jsp");
-		}
-		else {
+	public void showProduct (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
-		String[] qualiti = request.getParameterValues("quality");
-		String [] id = request.getParameterValues("id");
-		for (int i = 0; i < id.length; i++) {
-			int key = Integer.parseInt(id[i]);
-			int value = Integer.parseInt(qualiti[i]);
-			map.put(key, value);
-		}
-		request.setAttribute("cart", map);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("Thanhtoan.jsp");
+		System.out.println(request.getParameter("pagerow"));
+		int page = Integer.parseInt(request.getParameter("pagerow"));
+		ResultSet set = GetDataProduct.getDataMangerProduct(page);
+		System.out.println(set);
+		request.setAttribute("result", set);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/danhsachsanpham.jsp");
 		dispatcher.forward(request, response);
-		}
 		
 	}
 

@@ -44,7 +44,7 @@ public class CategoryLoad extends HttpServlet {
 		doGet(request, response);
 		
 	}
-	public static String getHeader(int id) {
+	public static String getHeaderById(int id) {
 		try {
 			Connection con = ConectionDB.getConection();
 			String sql ="SELECT category.name FROM category WHERE category.id = ?";
@@ -58,11 +58,16 @@ public class CategoryLoad extends HttpServlet {
 			e.printStackTrace();
 		}
 		return null;
-		
+	}
+	public static ResultSet getCatogoryByIdRoot (int idRoot) {
+		try {
+			Connection con = ConectionDB.getConection();
+			String sql = "SELECT catogory.name , product.* FROM product INNER JOIN catogory ON product.id_catogoy = catogogy.id WHERE "
+		}
 	}
 //	public static ArrayList<Catelogy> ContentHeader ()
 	public static void main(String[] args) {
-	System.out.println(	getHeader(1));
+	System.out.println(	getHeaderById(2));
 		
 	}
 

@@ -11,14 +11,17 @@
 							<div class="col-xs-12">
 								<div class="topDangNhap" style="float: right;">
 									<div id="topuser" class="textWhite">
+									<%if(session.getAttribute("user") == null){ %>
 										<a id="user" class="fa fa-user aDangNhap" href="#" data-toggle="modal"
-											data-target="#formlogin"><%if(session.getAttribute("user") == null){ %>
+											data-target="#formlogin">
 											 Đăng nhập </a>
 											 <%}else{ %>
 											 <%User user = (User) session.getAttribute("user");
-											 	%>Xin chào <%=user.getName()%> </a>
-											 	<script type="text/javascript">$("#topuser").html("<a id='user' class'fa fa-user aDangNhap'> Xin chào" +<%=user.getName()%> + "</a>"))</script>
-											 	<a ></a>
+											 	%>
+											 	<script type="text/javascript">
+											 	$("#topuser").html("<a id='user' class='fa fa-user aDangNhap' href='#'> Xin chào<%=user.getName()%></a>"+
+											 			"<a id='logout' href='<%=request.getContextPath()%>/Logout'+'>Thoát </a>");
+											 </script>
 											 	<%} %>
 									</div>
 								</div>
@@ -30,7 +33,7 @@
 								 %>
 								<div class="topDangNhap" style="float: right;">
 									<div class="textWhite">
-										<a class="gioHang" href="cart.html">Giỏ hàng (<b id="qualityCart"><%= map.size() %></b> sản
+										<a class="gioHang" href="cart.jsp">Giỏ hàng (<b id="qualityCart"><%= map.size() %></b> sản
 											phẩm)
 										</a>
 									</div>
@@ -133,13 +136,14 @@
 									</div>
 									<div class="form-group">
 										<label for="password">Mật khẩu:</label> <input type="password"
-											class="form-control" placeholder="New password"
+											class="form-control" id ="password" placeholder="New password"
 											name="password">
 									</div>
 									<div class="form-group">
 										<label for="passwordAgain">Nhập lại Mật khẩu:</label> <input
-											type="password" class="form-control"
-											placeholder="New password" name="passwordAgain">
+											type="password" class="form-control" id ="passwordAgain"
+											placeholder="New password" onkeyup="checkpass()" name="passwordAgain"> 
+											<span id ="errComfim" class = "requiment"></span>
 									</div>
 										<label for="name">Tên bạn:</label> <input type="text"
 											class="form-control" placeholder="Enter your name"
@@ -258,9 +262,7 @@
 				if (data.length >60) {
 					var obj = JSON.parse(data);
 					document.getElementById("closeModal").click();
-					$("#topuser").html("<a id='user' class'fa fa-user aDangNhap'> Xin chào" +obj.name + "</a>");
-					
-					
+					$("#topuser").html("<a id='user' class'fa fa-user aDangNhap'> Xin chào" +obj.name + "</a>" +"<a id='logout' href='<%=request.getContextPath()%>/Logout'+'>Thoát </a>");
 				}else{
 					$("#err_login").text(data);
 				}
@@ -271,5 +273,18 @@
 			}
 		})
 		
-	} </script>
+	} 
+</script>
+<script type="text/javascript">
+function checkpass() {
+	if ($("#password").val() == $("#passwordAgain").val()) {
+		$("#errComfim").html('<i class="fa fa-chevron-right hidden-md"></i>');
+	}else{
+		$("#errComfim").html("Con mẹ mày!");
+
+	}
+	
+}
+</script>
+
 

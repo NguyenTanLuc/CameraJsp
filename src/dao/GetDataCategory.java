@@ -10,53 +10,56 @@ import model.Catelogy;
 
 public class GetDataCategory {
 	ArrayList<Catelogy> list = new ArrayList<>();
-		
-	public ArrayList<Catelogy> getAllCategory() throws SQLException{
+
+	public ArrayList<Catelogy> getAllCategory() throws SQLException {
 		Connection conect = ConectionDB.getConection();
 		String query = "SELECT * FROM category";
 		PreparedStatement statement = conect.prepareStatement(query);
 		ResultSet rSet = statement.executeQuery();
-		while(rSet.next()) {
+		while (rSet.next()) {
 			int id = rSet.getInt("id");
 			String name = rSet.getString("name");
 			int id_root = rSet.getInt("id_root");
 			int status = rSet.getInt("status");
 			String icon = rSet.getString("icon");
 			list.add(new Catelogy(id, name, id_root, status, icon));
-				
 
-			}
+		}
 		rSet.close();
 		statement.close();
 		return list;
-		
+
 	}
-	public static Catelogy getCategoryById (int id) {
+
+	public static Catelogy getCategoryById(int id) {
 		Catelogy catego = null;
 		try {
-		Connection conect = ConectionDB.getConection();
-		String query = "SELECT * FROM category WHERE category.id ="+id;
-		PreparedStatement statement = conect.prepareStatement(query);
-		ResultSet rSet = statement.executeQuery();
-		rSet.next();
+			Connection conect = ConectionDB.getConection();
+			String query = "SELECT * FROM category WHERE category.id =" + id;
+			PreparedStatement statement = conect.prepareStatement(query);
+			ResultSet rSet = statement.executeQuery();
+			rSet.next();
 			int idca = rSet.getInt("id");
 			String name = rSet.getString("name");
 			int id_root = rSet.getInt("id_root");
 			int status = rSet.getInt("status");
 			String icon = rSet.getString("icon");
-			catego =new Catelogy(idca, name, id_root, status, icon);
+			catego = new Catelogy(idca, name, id_root, status, icon);
 			rSet.close();
 			statement.close();
-		}catch (Exception e) {
-			System.err.println("Loi GetCategoryByID :"+e);
-		
-			
+		} catch (Exception e) {
+			System.err.println("Loi GetCategoryByID :" + e);
+
 		}
-				
-return catego;
-			}
-	
-		
+
+		return catego;
 	}
 
+	public static String textSQLGetDataProductOfCatogory(int id) {
+		String sql = "SELECT product.* FROM product INNER JOIN category ON category.id = product.id_category WHERE category.id_root ="
+				+ id;
+		return sql;
 
+	}
+
+}

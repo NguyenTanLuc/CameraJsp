@@ -57,13 +57,14 @@
                             <%Set<Entry<Integer, Integer>> setTreeMap = map.entrySet();
                             int i =0;
                             double total =0;
+                            if(setTreeMap.size()!=0){
                     	    for (Entry<Integer, Integer> entry : setTreeMap) { 
                     	    Product product = GetDataProduct.getProDuctById(entry.getKey());
                     	    int quality = entry.getValue();
                     	     total += product.getPrice() * quality;
                     	    %>
                     	    <tr>
-                                                <td><a title="Xóa sản phẩm" style="font-size:20px;color:#000;" href="http://fptcamera.vn/removecart/e0c641195b27425bb056ac56f8953d24"><i class="fa fa-trash"></i></a></td>
+                                                <td><a title="Xóa sản phẩm" style="font-size:20px;color:#000;" href=""><i class="fa fa-trash"></i></a></td>
                                                 <td><b><%=product.getName() %></b></td>
                                                 <td><img class="cart_img" src="public/images/san-pham/<%=product.getImage()%>" style=" width: 100px;display: block;margin: 0 auto;"></td>
 												<td style="color:#ff0000;font-weight:bold;"><%=Utils.format(product.getPrice()) %>  VNĐ</td>
@@ -75,16 +76,18 @@
                     		<%i++;} %>
                     		<tr>
                                                 <td colspan="5">Tổng cộng</td>
-                                                <td id="total"style="color:#ff0000;font-weight:bold;">19,194,000 VNĐ</td>
+                                                <td id="total"style="color:#ff0000;font-weight:bold;"><%=Utils.format(total) %>VNĐ</td>
                                             </tr>
-                    	    	
+                    	    	<%}else{ %>
                             <tr>
+                            
                                 <td colspan="6">
                                     <strong>
                                         <center>Chưa có sản phẩm nào!</center>
                                     </strong>
                                 </td>
                             </tr>
+                            <%} %>
                             <tr>
                                 <td colspan="6">
                                     <input type="submit" value="Thanh Toán" class="btn btn-danger" style="float: right">

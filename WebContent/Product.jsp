@@ -67,7 +67,7 @@
 											đ</span>
 									</p>
 									<p>
-										Tình trạng: <span class="detail-stock">Còn hàng</span>
+										Tình trạng: <span class="detail-stock"><%if(product.getQuatity()==0){ %>Hết hàng <%}else{ %> Còn hàng<%} %></span>
 									</p>
 									<p>
 										Bảo hành: <span class="detail-stock">24 Tháng</span>

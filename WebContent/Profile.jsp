@@ -19,7 +19,7 @@
    </head>
    <body>
    <%User user = (User) session.getAttribute("user");
-   if(user == null)  response.getWriter().println("<script> alert("+"Bạn chưa đăng nhập"+") </script>");response.sendRedirect("index.jsp");%>
+   if(user == null){ response.getWriter().println("<script> alert("+"Bạn chưa đăng nhập"+") </script>");response.sendRedirect("index.jsp");}%>
     <div>
    		<jsp:include page="public/layout/header1.jsp"></jsp:include>
         <div class="container">
@@ -235,7 +235,7 @@
                               <tbody>
                                  <tr>
                                     <td>E-mail <span class="required">*</span></td>
-                                    <td> <input class="form-control" type="text" style="width:300px;" readonly="readonly"></td>
+                                    <td> <input class="form-control" type="text" style="width:300px;" readonly="readonly" value="<%=user.getEmail()%>"></td>
                                  </tr>
                                  <tr>
                                     <td><b>Đổi mật khẩu mới.</b></td>
@@ -255,17 +255,17 @@
                                  <tr>
                                     <td>Họ tên <span class="required">*</span>
                                     </td>
-                                    <td><input class="form-control" type="text" style="width:300px;"></td>
+                                    <td><input class="form-control" type="text" value="<%=user.getName() %>" style="width:300px;"></td>
                                  </tr>
                                  <tr>
                                     <td>Điện thoại <span class="required">*</span>
                                     </td>
-                                    <td><input class="form-control" type="text" style="width:300px;">
+                                    <td><input class="form-control" type="text" value="<%=user.getPhone() %>" style="width:300px;">
                                     </td>
                                  </tr>
                                  <tr>
                                     <td>Địa chỉ </td>
-                                    <td><input class="form-control" type="text" id="address" style="width:300px;"></td>
+                                    <td><input class="form-control" type="text" id="address" value="<%=user.getAddress() %>" style="width:300px;"></td>
                                  </tr>
                                  <tr>
                                     <td>Thành phố </td>
@@ -273,7 +273,7 @@
                                        <select class="form-control" name="city" id="city" style="width:302px;"
                                           onchange="CityChange(this.value);">
                                           <option value="1">Hà nội</option>
-                                          <option selected="" value="2">TP. Hồ Chí Minh</option>
+                                          <option selected="1" value="2">TP. Hồ Chí Minh</option>
                                           <option value="3">Hòa Bình</option>
                                           <option value="4">Hà Giang</option>
                                           <option value="5">Lào Cai</option>

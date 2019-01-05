@@ -1,3 +1,8 @@
+<%@page import="dao.GetDataCategory"%>
+<%@page import="org.apache.commons.lang3.StringEscapeUtils"%>
+<%@page import="model.Product"%>
+<%@page import="dao.GetDataProduct"%>
+<%@page import="java.sql.ResultSet"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -432,126 +437,44 @@
                   <div class="col-xs-12 col-md-9">
                      <div class="clear"></div>
                      <div class="header4">
-                        <h1>Camera trọn bộ</h1>
+                     <% int id = Integer.parseInt(request.getParameter("id"));
+                     ResultSet set = GetDataProduct.getDataByIdCatogory(id);
+                     set.next();%>
+                        <h1><%=GetDataCategory.getCategoryById(Integer.parseInt(set.getString("id_root"))).getName()%></h1>
                         <div class="clear"></div>
                      </div>
                      <div class="clear"></div>
                      <div class="product_list">
                         <div class="row">
+                        <%set.beforeFirst();
+                        while (set.next()){
+                       	Product product = new Product.Builder()
+						.setId(set.getInt("id"))
+						.setIdCategory(set.getInt("id_category"))
+						.setName(set.getString("name"))
+						.setPrice(set.getInt("price"))
+						.setStatus(set.getInt("status"))
+						.setQuatity(set.getInt("quatity"))
+						.setImage( set.getString("img"))
+						.setDetai(StringEscapeUtils.unescapeHtml4(set.getString("detail_product")))
+						.setThongSo(StringEscapeUtils.unescapeHtml4(set.getString("digital")))
+						.build();%>
                            <div class="col-xs-6 col-sm-4 col-lg-3">
                               <div class="thumbnail products" style="height: 217px;">
-                                 <a href="#chitietsanpham">
-                                 <img alt="Hình Sản phâm" src="./public/images/san-pham/lap-dat-tron-bo-1-camera-gia-re.jpg">
+                                    <a href="<%=request.getContextPath()%>/Product.jsp?id=<%=product.getId()%>">
+                                 <img alt="Hình Sản phâm" src="./public/images/san-pham/<%=product.getImage()%>">
                                  </a>
                                  <div class="caption">
-                                    <a href="<%=request.getContextPath()%>/ChiTietSanPham?id=11">
-                                       <h3>Lắp Đặt Trọn Bộ 1 Camera Giá Rẻ</h3>
+                                    <a href="<%=request.getContextPath()%>/Product.jsp?id=<%=product.getId()%>">
+                                       <h3><%=product.getName() %></h3>
                                     </a>
                                     <div class="clear"></div>
-                                    <span class="price">2,199,000 VNĐ</span>
+                                    <span class="price"><%=product.getPrice() %> VNĐ</span>
                                  </div>
                               </div>
                            </div>
-                           <div class="col-xs-6 col-sm-4 col-lg-3">
-                              <div class="thumbnail products" style="height: 217px;">
-                                 <a href="#chitietsanpham">
-                                 <img alt="Hình Sản phâm" src="./public/images/san-pham/lap-dat-camera-gia-re-ha-noi.jpg">
-                                 </a>
-                                 <div class="caption">
-                                    <a href="#chitietsanpham">
-                                       <h3>Lắp đặt camera giá rẻ</h3>
-                                    </a>
-                                    <div class="clear"></div>
-                                    <span class="price">2,199,000 VNĐ</span>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-xs-6 col-sm-4 col-lg-3">
-                              <div class="thumbnail products" style="height: 217px;">
-                                 <a href="#chitietsanpham">
-                                 <img alt="Hình Sản phâm" src="./public/images/san-pham/lap-dat-camera-gia-re-ha-noi.jpg">
-                                 </a>
-                                 <div class="caption">
-                                    <a href="#chitietsanpham">
-                                       <h3>Lắp đặt camera giá rẻ</h3>
-                                    </a>
-                                    <div class="clear"></div>
-                                    <span class="price">2,199,000 VNĐ</span>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-xs-6 col-sm-4 col-lg-3">
-                              <div class="thumbnail products" style="height: 217px;">
-                                 <a href="#chitietsanpham">
-                                 <img alt="Hình Sản phâm" src="./public/images/san-pham/lap-dat-tron-bo-2-camera-gia-re1.jpg">
-                                 </a>
-                                 <div class="caption">
-                                    <a href="#chitietsanpham">
-                                       <h3>Lắp Đặt Trọn Bộ 2 Camera Giá Rẻ</h3>
-                                    </a>
-                                    <div class="clear"></div>
-                                    <span class="price">3,199,000 VNĐ</span>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-xs-6 col-sm-4 col-lg-3">
-                              <div class="thumbnail products" style="height: 217px;">
-                                 <a href="#chitietsanpham">
-                                 <img alt="Hình Sản phâm" src="">
-                                 </a>
-                              </div>
-                           </div>
-                           <div class="col-xs-6 col-sm-4 col-lg-3">
-                              <div class="thumbnail products" style="height: 217px;">
-                                 <a href="#chitietsanpham">
-                                 <img alt="Hình Sản phâm" src="">
-                                 </a>
-                              </div>
-                           </div>
-                           <div class="col-xs-6 col-sm-4 col-lg-3">
-                              <div class="thumbnail products" style="height: 217px;">
-                                 <a href="#chitietsanpham">
-                                 <img alt="Hình Sản phâm" src="">
-                                 </a>
-                              </div>
-                           </div>
-                           <div class="col-xs-6 col-sm-4 col-lg-3">
-                              <div class="thumbnail products" style="height: 217px;">
-                                 <a href="#chitietsanpham">
-                                 <img alt="Hình Sản phâm" src="
-                                    ">
-                                 </a>
-                              </div>
-                           </div>
-                           <div class="col-xs-6 col-sm-4 col-lg-3">
-                              <div class="thumbnail products" style="height: 217px;">
-                                 <a href="#chitietsanpham">
-                                 <img alt="Hình Sản phâm" src="">
-                                 </a>
-                              </div>
-                           </div>
-                           <div class="col-xs-6 col-sm-4 col-lg-3">
-                              <div class="thumbnail products" style="height: 217px;">
-                                 <a href="#chitietsanpham0">
-                                 <img alt="Hình Sản phâm" src="">
-                                 </a>
-                              </div>
-                           </div>
-                           <div class="col-xs-6 col-sm-4 col-lg-3">
-                              <div class="thumbnail products" style="height: 217px;">
-                                 <a href="#chitietsanpham1">
-                                 <img alt="Hình Sản phâm" src="">
-                                 </a>
-                              </div>
-                           </div>
-                           <div class="col-xs-6 col-sm-4 col-lg-3">
-                              <div class="thumbnail products" style="height: 217px;">
-                                 <a href="#chitietsanpham2">
-                                 <img alt="Hình Sản phâm" src="">
-                                 </a>
-                              </div>
-                           </div>
-                        </div>
+                           <%} %>
+                     </div>
                      </div>
                      <div class="clear"></div>
                   </div>
