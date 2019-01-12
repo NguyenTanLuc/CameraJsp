@@ -4,6 +4,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class User {
+	private int id;
 	private String name;
 	private String accont;
 	private String pass;
@@ -14,9 +15,10 @@ public class User {
 	private String date;
 	private int status;
 
-	public User(String name, String accont, String pass, String email, String address, String phone,
+	public User(int id,String name, String accont, String pass, String email, String address, String phone,
 			int idGroup, String date, int status) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.accont = accont;
 		this.pass = pass;
@@ -34,6 +36,9 @@ public class User {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	public int getId() {
+		return id;
 	}
 
 	public String getAccont() {

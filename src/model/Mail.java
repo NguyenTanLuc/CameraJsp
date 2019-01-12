@@ -11,7 +11,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class Mail {
-	public static void SendMailVerify(String linkVerify) {
+	public static void SendMailVerify(String linkVerify,String to) {
 		Properties props = new Properties();
 		props.put("mail.smtp.host", "smtp.gmail.com");
 		props.put("mail.smtp.socketFactory.port", "465");
@@ -29,9 +29,9 @@ public class Mail {
 
 			Message message = new MimeMessage(session);
 			message.setFrom(new InternetAddress("from@no-spam.com"));
-			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("tanlucnguyenit@gmail.com"));
+			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
 			message.setSubject("Verify Camera MLC");
-			message.setText("http://localhost:8080"+  linkVerify);
+			message.setText("http://localhost:8080"+ linkVerify);
 
 			Transport.send(message);
 

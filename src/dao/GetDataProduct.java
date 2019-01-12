@@ -72,7 +72,7 @@ public class GetDataProduct {
 	public static ResultSet getDataSearch (String keyword ) {
 		ResultSet set = null;
 		try {
-			String sql = "SELECT product.id,product.name,product.price,product.img FROM product WHERE product.name LIKE ?";
+			String sql = "SELECT product.id,product.name,product.price,product.img FROM product WHERE product.name LIKE ? LIMIT 14";
 			Connection connection = ConectionDB.getConection();
 			PreparedStatement statement = connection.prepareStatement(sql);
 			String sq ="%"
@@ -90,7 +90,6 @@ public class GetDataProduct {
 		if (page !=0 ) {
 			page = page-1;
 		}
-		System.out.println(page);
 		try {
 			connection = ConectionDB.getConection();
 			String sql ="SELECT product.*, category.name as namecatogory,category.id_root FROM product INNER JOIN category ON product.id_category = category.id LIMIT ?, 15";
@@ -106,9 +105,12 @@ public class GetDataProduct {
 	public static ResultSet getDataByIdCatogory (int id) {
 		try {
 			Connection con = ConectionDB.getConection();
-			String sql = "SELECT product.*,category.id_root FROM product INNER JOIN category ON category.id = product.id_category WHERE product.id_category = ?";
+			String sql = "SELECT product.* FROM product WHERE status=1 and (id_category = ? OR id_category IN (SELECT id FROM category WHERE id_root IN (SELECT id FROM category WHERE id = ? OR id_root IN (SELECT id FROM category WHERE id = ? ))))";
 			PreparedStatement statement = con.prepareStatement(sql);
 			statement.setInt(1, id);
+			statement.setInt(2, id);
+			statement.setInt(3, id);
+			
 			return statement.executeQuery();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

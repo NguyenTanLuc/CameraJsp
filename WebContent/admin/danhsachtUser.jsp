@@ -1,3 +1,6 @@
+<%@page import="model.User"%>
+<%@page import="dao.GetDataUser"%>
+<%@page import="java.sql.ResultSet"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -234,28 +237,112 @@
 							</div>
 							<hr>
 							<div class="row">
-								<div class="col-sm-12">
-									<section class="panel">
-
-									<form>
-										<table class="table">
-											<thead>
-												<tr>
-
-													<th>ID</th>
-													<th>Tên người dùng</th>
-													<th>Email</th>
-													<th>Số điện thoại</th>
-													<th>Tình trạng</th>
-													<th>Thao tác</th>
-												</tr>
-											</thead>
-
-										</table>
-
-									</form>
-
-									</section>
+								<div class="col-md-11 col-sm-12" style="margin-left: 10px;">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h3 class="panel-title">
+												<i class="fa fa-list"></i> Customer List
+											</h3>
+										</div>
+										<div class="panel-body">
+											<form
+												action="https://demo.opencart.com/admin/index.php?route=customer/customer/delete&amp;user_token=C8sjqwgXLiqApaUIWW0XZmDnHQrGSuX8&amp;page=2"
+												method="post" enctype="multipart/form-data"
+												id="form-customer">
+												<table class="table table-bordered table-hover">
+													<thead>
+														<tr>
+															<td style="width: 1px;" class="text-center"><input
+																type="checkbox"
+																onclick="$('input[name*=\'selected\']').prop('checked', this.checked);"></td>
+															<td class="text-left"><a>STT</a></td>
+															<td class="text-left"><a>Tên người dùng</a></td>
+															<td class="text-left"><a>E-Mail</a></td>
+															<td class="text-left"><a>Số điện thoại</a></td>
+															<td class="text-left"><a>Nhóm người dùng</a></td>
+															<td class="text-left"><a>Trạng thái</a></td>
+															<td class="text-right">Thao tác</td>
+														</tr>
+													</thead>
+													<tbody>
+													<% int ipage = Integer.parseInt(request.getParameter("page"));
+													ResultSet resultSet = GetDataUser.getDataUserManager(ipage);
+													int stt=0;
+													while (resultSet.next()){
+													User user = GetDataUser.getUserFomResultSet(resultSet);
+													String nameGroup =resultSet.getString("namegroup");
+													String namestt =resultSet.getString("namestatus");%>
+														<tr>
+															<td class="text-center"><input type="checkbox"
+																name="selected[]" value="4631"></td>
+															<td class="text-left"><span><%=stt %></span></td>
+															<td class="text-left"><span><%=user.getName() %></span></td>
+															<td class="text-left"><span><%=user.getEmail() %></span></td>
+															<td class="text-left"><span><%=user.getPhone() %></span></td>
+															<td class="text-left"><span><%=nameGroup %></span></td>
+															<td class="text-left"><span><%=namestt %></span></td>
+															<td class="text-right"><div class="btn-group"
+																	style="min-width: 65px;">
+																	<a
+																		href="https://demo.opencart.com/admin/index.php?route=customer/customer/edit&amp;user_token=C8sjqwgXLiqApaUIWW0XZmDnHQrGSuX8&amp;customer_id=4631&amp;page=2"
+																		data-toggle="tooltip" title="" class="btn btn-primary"
+																		data-original-title="Edit"><i class="fa fa-pencil"></i></a>
+																	<button type="button" data-toggle="dropdown"
+																		class="btn btn-primary dropdown-toggle">
+																		<span class="caret"></span>
+																	</button>
+																	<ul class="dropdown-menu dropdown-menu-right">
+																		<li class="dropdown-header">Options</li>
+																		<li class="disabled"><a><i
+																				class="fa fa-unlock"></i> Unlock Account</a></li>
+																		<li role="separator" class="divider"></li>
+																		<li class="dropdown-header">Login into Store</li>
+																		<li><a
+																			href="https://demo.opencart.com/admin/index.php?route=customer/customer/login&amp;user_token=C8sjqwgXLiqApaUIWW0XZmDnHQrGSuX8&amp;customer_id=4631&amp;store_id=0"
+																			target="_blank"><i class="fa fa-lock"></i> Your
+																				Store</a></li>
+																	</ul>
+																</div></td>
+														</tr>
+														<%stt++;}resultSet.close(); %>
+													</tbody>
+												</table>
+											</form>
+											<div class="row">
+												<div class="col-sm-6 text-left">
+													<ul class="pagination">
+														<li><a
+															href="https://demo.opencart.com/admin/index.php?route=customer/customer&amp;user_token=C8sjqwgXLiqApaUIWW0XZmDnHQrGSuX8">|&lt;</a></li>
+														<li><a
+															href="https://demo.opencart.com/admin/index.php?route=customer/customer&amp;user_token=C8sjqwgXLiqApaUIWW0XZmDnHQrGSuX8">&lt;</a></li>
+														<li><a
+															href="https://demo.opencart.com/admin/index.php?route=customer/customer&amp;user_token=C8sjqwgXLiqApaUIWW0XZmDnHQrGSuX8">1</a></li>
+														<li class="active"><span>2</span></li>
+														<li><a
+															href="https://demo.opencart.com/admin/index.php?route=customer/customer&amp;user_token=C8sjqwgXLiqApaUIWW0XZmDnHQrGSuX8&amp;page=3">3</a></li>
+														<li><a
+															href="https://demo.opencart.com/admin/index.php?route=customer/customer&amp;user_token=C8sjqwgXLiqApaUIWW0XZmDnHQrGSuX8&amp;page=4">4</a></li>
+														<li><a
+															href="https://demo.opencart.com/admin/index.php?route=customer/customer&amp;user_token=C8sjqwgXLiqApaUIWW0XZmDnHQrGSuX8&amp;page=5">5</a></li>
+														<li><a
+															href="https://demo.opencart.com/admin/index.php?route=customer/customer&amp;user_token=C8sjqwgXLiqApaUIWW0XZmDnHQrGSuX8&amp;page=6">6</a></li>
+														<li><a
+															href="https://demo.opencart.com/admin/index.php?route=customer/customer&amp;user_token=C8sjqwgXLiqApaUIWW0XZmDnHQrGSuX8&amp;page=7">7</a></li>
+														<li><a
+															href="https://demo.opencart.com/admin/index.php?route=customer/customer&amp;user_token=C8sjqwgXLiqApaUIWW0XZmDnHQrGSuX8&amp;page=8">8</a></li>
+														<li><a
+															href="https://demo.opencart.com/admin/index.php?route=customer/customer&amp;user_token=C8sjqwgXLiqApaUIWW0XZmDnHQrGSuX8&amp;page=9">9</a></li>
+														<li><a
+															href="https://demo.opencart.com/admin/index.php?route=customer/customer&amp;user_token=C8sjqwgXLiqApaUIWW0XZmDnHQrGSuX8&amp;page=3">&gt;</a></li>
+														<li><a
+															href="https://demo.opencart.com/admin/index.php?route=customer/customer&amp;user_token=C8sjqwgXLiqApaUIWW0XZmDnHQrGSuX8&amp;page=1356">&gt;|</a></li>
+													</ul>
+												</div>
+												<div class="col-sm-6 text-right">Showing 21 to 40 of
+													27103 (1356 Pages)</div>
+											</div>
+										</div>
+									</div>
 								</div>
 
 							</div>

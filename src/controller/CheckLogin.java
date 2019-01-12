@@ -1,8 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -64,7 +62,6 @@ public class CheckLogin extends HttpServlet {
 		String errUserLogin = "";
 		String errUser = "";
 		String errVerify;
-		Map<String, Object> map = new HashMap<String, Object>();
 		if (account.equals("") || account.equals(null) || pass.equals("") || account.equals(null)) {
 			errInput = true;
 			errUser = "Vui lòng điền tên đăng nhập và mật khẩu của bạn !";
