@@ -36,12 +36,202 @@
    }else{
    User user =  (User) session.getAttribute("user");
    %> 
- <jsp:include page="public/layout/header1.jsp"></jsp:include>
-   <jsp:include page="public/layout/headerPage.jsp"></jsp:include>          
+      <div>
+           <jsp:include page="public/layout/header1.jsp"></jsp:include>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="col-md-3 col-lg-3 hidden-xs hidden-sm" style="padding-right:0;">
+                                <div id="listDanhMuc">
+                                    <div class="dauDanhMuc">
+                                        <span>Danh mục sản phẩm<i class="fa fa-chevron-circle-down"></i></span>
+                                    </div>
+                                    <ul class="noiDungDanhMuc" style="height: 401px; width: 100%">
+                                        <ul>
+                                            <li>
+                                                <a href="category.html"><img alt="Camera trọn bộ" src="public/images/danh-muc-san-pham/lap-dat-camera-tron-bo.png"><span
+                                                        class="nameDanhMuc">Camera trọn bộ </span> <i class="fa fa-chevron-right hidden-md"></i></a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#"><span class="nameDanhMuc">Trọn
+                                                                bộ camera giá rẻ</span></a>
+                                                        <ul>
+                                                            <li>
+                                                                <a><span class="nameDanhMuc">Trọn bộ 1 Camera
+                                                                        giá rẻ</span></a>
+                                                                <div class="clear"></div>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><span class="nameDanhMuc">Trọn bộ 2 camera
+                                                                        giá rẻ</span></a>
+                                                                <div class="clear"></div>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><span class="nameDanhMuc">Trọn bộ 3 Camera
+                                                                        giá rẻ</span></a>
+                                                                <div class="clear"></div>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><span class="nameDanhMuc">Trọn bộ 4 Camera
+                                                                        giá rẻ</span></a>
+                                                                <div class="clear"></div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><span class="nameDanhMuc">Trọn
+                                                                bộ camera HD</span></a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#"><span class="nameDanhMuc">Trọn
+                                                                        bộ 1 Camera HD</span></a>
+                                                                <div class="clear"></div>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#"><span class="nameDanhMuc">Trọn
+                                                                        bộ 2 Camera HD</span></a>
+                                                                <div class="clear"></div>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#1"><span class="nameDanhMuc">Trọn
+                                                                        bộ 3 Camera HD</span></a>
+                                                                <div class="clear"></div>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#1"><span class="nameDanhMuc">Trọn
+                                                                        bộ 4 Camera HD</span></a>
+                                                                <div class="clear"></div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#1"><span class="nameDanhMuc">Camera
+                                                                Nhập khẩu</span></a>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="#1"><span class="nameDanhMuc">Bộ 2 Camera
+                                                                        HIKVISION</span></a>
+                                                                <div class="clear"></div>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#1"><span class="nameDanhMuc">Lắp 1 Camera
+                                                                        HIKVISION</span></a>
+                                                                <div class="clear"></div>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#1"><span class="nameDanhMuc">Bộ camera KCE HÀN
+                                                                        QUỐC</span></a>
+                                                                <div class="clear"></div>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="clear"></div>
+                                                    </li>
+                                                </ul>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li>
+                                                <a href="#2"><img alt="Camera giám sát " src="public/images/danh-muc-san-pham/camera-giam-sat.png"><span
+                                                        class="nameDanhMuc">Camera giám sát </span><i class="fa fa-chevron-right hidden-md"></i></a>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li>
+                                                <a href="#1"><img alt="Đầu ghi hình camera " src="public/images/danh-muc-san-pham/dau-ghi-hinh-camera-quan-sat.png"><span
+                                                        class="nameDanhMuc">Đầu ghi hình camera </span><i class="fa fa-chevron-right hidden-md"></i></a>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li>
+                                                <a href="#1"><img alt="Phụ kiện camera " src="public/images/danh-muc-san-pham/phu-kien-camera.png"><span
+                                                        class="nameDanhMuc">Phụ kiện camera </span><i class="fa fa-chevron-right hidden-md"></i></a>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li>
+                                                <a href="#1"><img alt="Thiết bị an ninh " src="public/images/danh-muc-san-pham/camera-thiet-bi-an-ninh.png"><span
+                                                        class="nameDanhMuc">Thiết bị an ninh </span><i class="fa fa-chevron-right hidden-md"></i></a>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li>
+                                                <a href="#1"><img alt="Máy chấm công " src="public/images/danh-muc-san-pham/may-cham-cong-gia-re.png"><span
+                                                        class="nameDanhMuc">Máy chấm công </span><i class="fa fa-chevron-right hidden-md"></i></a>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li>
+                                                <a href="#/1"><img alt="Tổng đài - Bộ đàm " src="public/images/danh-muc-san-pham/78-32.png"><span
+                                                        class="nameDanhMuc">Tổng đài - Bộ đàm </span><i class="fa fa-chevron-right hidden-md"></i></a>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li>
+                                                <a href="#/1"><img alt="Thiết bị văn phòng " src="public/images/danh-muc-san-pham/thiet-bi-van-phong.png"><span
+                                                        class="nameDanhMuc">Thiết bị văn phòng </span><i class="fa fa-chevron-right hidden-md"></i></a>
+                                                <div class="clear"></div>
+                                            </li>
+                                        </ul>
+                                        <div class="clear"></div>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-9 col-lg-9">
+                                <div class="row">
+                                    <div class="col-xs-12 col-lg-8" style="padding:0;">
+                                        <div id="timKiem">
+                                            <form>
+                                                <input type="text" value="" id="nutTimKiem" class="inputTimKiem"
+                                                    placeholder="Tìm kiếm sản phẩm ...">
+                                                <div class="clear"></div>
+                                                <input type="submit" value="Tìm kiếm" id="buttonEnter" class="buttonEnter">
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 hidden-xs hidden-sm hidden-md" style="padding-left:0;">
+                                        <button type="button" class="btn btn-danger button-support" data-toggle="modal"
+                                            data-target="#hotro"><img src="./public/images/ui_images/yahoo-smile.png">&nbsp;Hỗ
+                                            trợ trực tuyến</button>
+                                            <div class="modal fade" id="hotro" role="dialog" style="display: none">
+                                                <div class="modal-dialog modal-md">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h2>Hỗ trợ trực tuyến </h2>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="row">
+                                                                <div class="col-sm-4 col-md-4">
+                                                                    <div class="hotlinehotro">
+                                                                        <strong> Mr.Tấn Lực</strong>
+                                                                        <p>Tư vấn bán hàng</p>
+                                                                        <p>SĐT: 0328826810</p>
+            
+            
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-4 col-md-4">
+                                                                    <div class="hotlinehotro">
+                                                                        <strong>Mr.Thanh Mến </strong>
+                                                                        <p>Hỗ trợ bảo trì bảo hành</p>
+                                                                        <p>SĐT: 0989910161</p>
+            
+            
+                                                                    </div>
+            
+                                                                </div>
+            
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="clear"></div>
-                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
       <div class="clear"></div>
-      <!-- Top end here -->
+      </div> <!-- Top end here -->
       <div class="container">
          <div class="row">
             <div class="col-xs-12">
@@ -85,7 +275,7 @@
                               <label style="font-weight:bold;vertical-align:top;" for="ship_address">Địa chỉ
                               <span class="required"> * </span></label>
                               <span>
-                              <input class="form-control" type="text" id="ship_address" placeholder= "<%=user.getAddress()%>"></span>
+                              <input class="form-control" type="text" name="ship_address" placeholder= "<%=user.getAddress()%>"></span>
                            </div>
                         </td>
                         <td style="vertical-align:top">
@@ -148,7 +338,7 @@
                      <tr class="no-border">
                         <td colspan="2">
                            <input class="btn btn-warning" type="button" value="Trở về giỏ hàng">
-                           <input class="btn btn-danger" type="button" onclick="oder()" value="Mua hàng" style="float:right">
+                           <input class="btn btn-danger" type="submit" method="get" value="Mua hàng" style="float:right">
                         </td>
                      </tr>
                   </tbody>
@@ -159,27 +349,117 @@
          </div>
          <div class="clear"></div>
       </div>
-     <jsp:include page="public/layout/Footer.jsp"></jsp:include>
+      <div id="bottom">
+         <div class="container">
+            <div class="row">
+               <div class="col-xs-12">
+                  <div class="row">
+                     <div class="col-xs-12 col-md-4 col-lg-3">
+                        <div class="tabBottom">
+                           <div class="tenTabBottom">Cam kết</div>
+                           <div class="claim">Sản phẩm hàng hóa chính hãng, đa dạng, phong phú</div>
+                           <div class="claim">Luôn luôn giá rẻ và khuyến mại không ngừng</div>
+                           <div class="claim">Dịch vụ chăm sóc khách hàng uy tín, tận tâm</div>
+                        </div>
+                     </div>
+                     <div class="col-xs-12 col-md-4 col-lg-3">
+                        <div class="tabBottom2">
+                           <div class="tenTabBottom">Hỗ trợ khách hàng</div>
+                           <ul>
+                              <li><a href="./xemcameradt.html">Xem camera giám sát qua điện thoại</a></li>
+                              <li><a href="#">Xem camera quan sát qua máy tính</a></li>
+                              <li><a href="#">Download tài liệu</a></li>
+                              <li><a href="#">HD cài đặt phần mềm Teamviewer</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-xs-12 col-md-4 col-lg-3">
+                        <div class="tabBottom2">
+                           <div class="tenTabBottom">Thông tin công ty</div>
+                           <ul>
+                              <li><a href="#">Giới thiệu</a></li>
+                              <li><a href="#">Tuyển dụng</a></li>
+                              <li><a href="#">Chính sách</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-xs-12 col-md-4 col-lg-3 hidden-md">
+                        <div class="tabBottom2">
+                           <div class="tenTabBottom">Tổng đài trợ giúp</div>
+                           <div id="lienHeFacebook">
+                              <ul>
+                                 <li>Kết nối với chúng tôi </li>
+                              </ul>
+                              <div id="logoFacebook">
+                                 <a target="_blank" rel="nofollow" href="https://www.facebook.com/groups/291188018163318/">
+                                 <img src="./public/images/ui_images/f_fb.png">
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="container-fluid bg-footer">
+         <div class="row">
+            <div class="col-xs-12 col-xs-offset-0 col-md-10 col-md-offset-1">
+               <div class="row">
+                  <div class="col-md-2 hidden-xs hidden-sm">
+                     <div class="f-logo">
+                        <a href="http://fptcamera.vn/">
+                        <img title="LẮP ĐẶT CAMERA QUAN SÁT GIÁ RẺ" alt="Camera MLC Việt Nam tự hào Nhà cung cấp thiết bị camera giám sát giá rẻ uy tín trên toàn quốc"
+                           style="border-radius: 30px;" src="./public/images/ui_images/logo.jpg">
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-xs-12 col-md-5">
+                     <div class="diaChiText">
+                        <p><span style="color:#ff6600;"><strong>LẮP ĐẶT CAMERA TẠI TP.HCM</strong></span><br>
+                           Địa chỉ : <span style="color:#FFD700;">KTX B ĐH Nông Lâm </span><br>
+                           Điện thoại : <span style="color:#FFD700;">0328826810 - 0989910161</span><br>
+                           Website : <span style="color:#FFD700;">http://mlc.vn</span>
+                        </p>
+                        <p><span style="color:#FF8C00;">Giới thiệu dịch vụ </span><a href="https://sites.google.com/site/camerafptvietnam/"><span
+                           style="color:#FF8C00;">lắp đặt camera</span></a><span style="color:#FF8C00;">
+                           của
+                           MLC TP.HCM</span>
+                        </p>
+                        <p><em>Trước nhu cầu của thị trường và mở rộng ngành dịch vụ Công ty MLC TP.HCM được
+                           sáng lập
+                           hoạt động triển khai lắp đặt Internet Cáp quang – Camera giám sát
+                           tại&nbsp;TP.HCM.
+                           "Hiện chúng tôi đang phát triển kết hợp với một số <strong>đơn vị lắp đặt
+                           camera uy tín</strong>
+                           tạo nên một thị trường dịch vụ công nghệ uy tín trên toàn quốc".</em>
+                        </p>
+                        <p>&nbsp;</p>
+                     </div>
+                  </div>
+                  <div class="col-xs-12 col-md-5">
+                     <div class="diaChiText">
+                        <p><strong><span style="color:#FF8C00;">Trụ sở&nbsp;MLC</span></strong><br style="font-size: 14px; line-height: 22.3999996185303px;">
+                           <span style="font-size: 14px; line-height: 22.3999996185303px;">Địa chỉ : <span style="color:#FFD700;">Linh
+                           Trung, Thủ Đức, TP.HCM</span></span><br>
+                           Điện thoại: <span style="color:#FFD700;">0328826810</span>
+                        </p>
+                        <p>&nbsp;</p>
+                        <p><span style="color:#FF8C00;">Hiện chúng tôi có các điểm dịch vụ như: </span></p>
+                        <p><span style="color:#cccccc;">Thủ Đức, Bình Thạnh, Quận 1, Quận 4, Quận 5 và các vùng
+                           lân cận
+                           </span>
+                        </p>
+                        <p>&nbsp;</p>
+                        <p style="text-align: right;"><img alt="camera fpt đang ký bộ công thương" src="./public/images/ui_images/camera-fpt-thong-bao-bo-cong-thuong.png"></p>
+                     </div>
+                  </div>
+               </div>
+               <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+         </div>
+      </div>
    </body>
-   <script type="text/javascript"> function oder() {
-	   var address = $("#ship_address").val();
-	   var keysaleof = $("#key_sales_off").val();
-	  $.ajax({
-		  dataType : "text",
-		  type : "post",
-		  data : {
-			  address : address,
-			  keysaleof : keysaleof	
-			  },
-			  url: "<%=request.getContextPath()%>/Order",
-			  success: function() {
-				  alert ("OKe")
-				
-			}
-	  })
-	   
-	   
-	
-}
-   </script>
 </html>

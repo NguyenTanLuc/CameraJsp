@@ -1,4 +1,3 @@
-<%@page import="java.util.ArrayList"%>
 <%@page import="util.Utils"%>
 <%@page import="model.Catelogy"%>
 <%@page import="model.Product"%>
@@ -230,22 +229,19 @@
 												class="form-control" id="ttsp">
 										</div>
 										<div class="form-group">
-											<label>Loại danh mục</label> <select id="ttdm"
+											<label>Loại sản phẩm</label> <input type="text"
+												class="form-control" id="tlsp">
+										</div>
+										<div class="form-group">
+											<label>Thuộc danh mục</label> <select id="ttdm"
 												class="form-control select2 select2-hidden-accessible"
 												style="width: 100%;" tabindex="-1" aria-hidden="true">
 												<option selected="selected"></option>
-												<%
-													GetDataCategory cato = new GetDataCategory();
-													ArrayList<Catelogy> catelogies = cato.getAllCategory();
-													for (Catelogy cat : catelogies) {
-												%>
-												<option value="<%=cat.getId()%>"><%=cat.getName()%></option>
-												<%
-													}
-												%>
+												<option value="CAMERA IP">Camera IP</option>
+												<option value="CAMERA ANALOG">Camera Analog</option>
+												<option value="ĐẦU GHI IP">Đầu ghi IP</option>
+												<option value="ĐẦU GHI ANALOG">Đầu ghi Analog</option>
 											</select>
-
-
 										</div>
 										<div class="form-group">
 											<label>Giá sản phẩm</label> <input type="number"
@@ -264,12 +260,13 @@
 
 										<div class="form-group">
 											<label>Chi tiết</label>
+											<script>
+												CKEDITOR
+														.replace(tchitiet)
+											</script>
 											<textarea class="ckeditor" id="tchitiet" cols="80" rows="10"
 												style="background: #999"></textarea>
 										</div>
-										<script>
-												CKEDITOR.replace("tchitiet")
-											</script>
 									</form>
 
 
@@ -283,32 +280,6 @@
 						</div>
 					</div>
 
-					<div class="modal fade" id="formDelete" tabindex="-1" role="dialog"
-						aria-labelledby="myModalLabel" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal"
-										aria-hidden="true">&times;</button>
-									<h4 class="modal-title" id="myModalLabel">Xóa sản phẩm
-										này?</h4>
-								</div>
-
-								<div class="modal-body">
-									<p>Xóa sản phẩm khỏi database không thể khôi phục</p>
-									<p>Bạn có muốn xóa không?</p>
-									<p class="debug-url"></p>
-								</div>
-
-								<div class="modal-footer">
-									<button type="button" class="btn btn-default"
-										data-dismiss="modal" id="clodeDelete">Cancel</button>
-									<a class="btn btn-danger btn-ok" id="btnDelete">Delete</a>
-								</div>
-							</div>
-						</div>
-					</div>
 					<div class="row">
 						<div class="col-xs-12">
 							<div class="container-fluid">
@@ -381,22 +352,17 @@
 														<table class="table table-bordered table-hover">
 															<thead>
 																<tr>
-																	<th style="width: 1px;" class="text-center"><input
+																	<td style="width: 1px;" class="text-center"><input
 																		type="checkbox"
-																		onclick="$('input[name*=\'selected\']').prop('checked', this.checked);"></th>
-																	<th style="width: 1%">STT</th>
+																		onclick="$('input[name*=\'selected\']').prop('checked', this.checked);"></td>
+																	<td>STT</td>
 
-																	<th class="text-center" style="width: 1%">ID</th>
-																	<th class="text-left" style="width: 22%"><a>Tên
-																			sản phẩm</a></th>
-																	<th class="text-left" style="width: 22%"><a>
-																			Loại sản phẩm</a></th>
-																	<th class="text-right" style="width: 6%"><a>
-																			Giá</a></th>
-																	<th class="text-right" style="width: 15%"><a>Hình
-																			ảnh</a></th>
-																	<th class="text-left"><a>Thao tác</a></th>
-
+																	<td class="text-center">ID</td>
+																	<td class="text-left"><a>Tên sản phẩm</a></td>
+																	<td class="text-left"><a> Loại sản phẩm</a></td>
+																	<td class="text-right"><a> Giá</a></td>
+																	<td class="text-right"><a>Hình ảnh</a></td>
+																	<td class="text-left"><a>Thao tác</a></td>
 																</tr>
 															</thead>
 															<tbody>
@@ -407,25 +373,21 @@
 																		Product product = GetDataProduct.getProDuctById(set.getInt("id"));
 																		Catelogy catelogy = GetDataCategory.getCategoryById(product.getIdCategory());
 																%>
-																<tr id="row<%=product.getId()%>">
+																<tr>
 																	<td class="text-center"><input type="checkbox"
 																		name="selected[]" value="42"></td>
-																	<td class="text-center"><%=stt%></td>
-																	<td class="text-center"><%=product.getId()%></td>
-																	<td class="text-left"><%=product.getName()%></td>
-																	<td class="text-letf"><%=catelogy.getName()%></td>
+																	<td class ="text-center"><%=stt%></td>
+																	<td class ="text-center"><%=product.getId()%></td>
+																	<td class ="text-left"><%=product.getName()%></td>
+																	<td class ="text-letf"><%=catelogy.getName()%></td>
 																	<td><%=Utils.format(product.getPrice())%></td>
-																	<td class="text-center"><img
+																	<td><img
 																		src="<%=request.getContextPath()%>/public/images/san-pham/<%=product.getImage()%> "
 																		style="width: 50px; height: 50px"></td>
-																	<td class="text-right" id="row"><a href=""
-																		onclick="edit(<%=product.getId()%>)"
-																		data-toggle="modal" data-target="#add" title=""
-																		class="btn btn-primary" data-original-title="Edit"><i
-																			class="fa fa-pencil"></i></a> <a class="btn btn-danger"
-																		id="delete" onclick="SetDelete(<%=product.getId()%>)"
-																		data-toggle="modal" data-target="#formDelete"><i
-																			class="fa fa-trash"></i></a></td>
+																	<td class="text-right"><a
+																		href=""
+																		data-toggle="modal" data-target="#add" title="" class="btn btn-primary"
+																		data-original-title="Edit"><i class="fa fa-pencil"></i></a></td>
 																</tr>
 																<%
 																	stt++;
@@ -435,16 +397,10 @@
 														</table>
 													</div>
 												</form>
-												<div class="row" style="float: right;">
-													<nav aria-label="Page navigation example" sty>
-													<ul class="pagination">
-														<li class="page-item"><a class="page-link" href="#">Previous</a></li>
-														<li class="page-item"><a class="page-link" href="#">1</a></li>
-														<li class="page-item"><a class="page-link" href="#">2</a></li>
-														<li class="page-item"><a class="page-link" href="#">3</a></li>
-														<li class="page-item"><a class="page-link" href="#">Next</a></li>
-													</ul>
-													</nav>
+												<div class="row">
+													<div class="col-sm-6 text-left"></div>
+													<div class="col-sm-6 text-right">Showing 1 to 19 of
+														19 (1 Pages)</div>
 												</div>
 											</div>
 										</div>
@@ -452,56 +408,20 @@
 								</div>
 							</div>
 						</div>
+						<!-- /.col -->
 					</div>
-					</section>
+					<!-- /.row --> </section>
+					<!-- /.content -->
+
 				</div>
+				<!-- /.content-wrapper -->
 
 			</div>
 		</div>
 		<script type="text/javascript">
-		function edit(id) {
-			var idproduct = id;
-			$.ajax({
-				dataType : "text",
-				type: "post",
-				data:{
-					id : idproduct
-				},
-			url :"<%=request.getContextPath()%>/LoadDataProductAdmin",
-			success: function (data) {
-				var obj = JSON.parse(data);
-				$("#ttsp").val(obj.name);
-				$("#tgsp").val(obj.price);
-				$("#ttdm").val(obj.idCategory);
-				CKEDITOR.instances['tchitiet'].setData(obj.detai);
-				CKEDITOR.instances['tchitiet'].getData();
-				
-			}
-			})
-			
-		}
 			
 		
 		</script>
-		<script type="text/javascript"> function SetDelete( i) {
-			var id  = i;
-				$("#btnDelete").click(function() {
-					$.ajax({
-						dataType : "text",
-						type : "post",
-						data :{ idd : id},
-						url : "<%=request.getContextPath()%>/DeleteProduct1",
-						success: function() {
-							$("#row"+i).slideUp();
-							$("#clodeDelete").click();
-							
-						}
-				})
-					
-				});
-					
-		}</script>
-
 		<!-- ./wrapper -->
 </body>
 

@@ -40,6 +40,7 @@ public class Checkregister extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -59,24 +60,20 @@ public class Checkregister extends HttpServlet {
 		String date = request.getParameter("ngaysinh");
 		String tp = request.getParameter("id_tp");
 		String address = request.getParameter("address")+tp;
-		if (account == "" || pass == "" || email == "" ) {
-			out.println("<script type=\"text/javascript\">");
-			out.println("alert('Vui lòng điền đầy đủ thông tin');");
-			out.println("</script>");
-		}else {
 
 		try {
-			if(dangky(name, account, pass, date, email, phone, address)) {  
-				Mail.SendMailVerify(request.getContextPath()+"/VerifyMLC?account"+"="+account,email);
+			if(dangky(name, account, pass, date, email, phone, address)) {
+				Mail.SendMailVerify(request.getContextPath()+"/VerifyMLC?account"+"="+account);
 				out.println("<script type=\"text/javascript\">");
-				out.println("alert('Đăng kí thành công vui lòng xác nhận email');");
+				out.println("alert('Đăng kí thành công');");
 				out.println("</script>");
-			}else {
-			}
+			};
 		} catch (Exception e) {
 			System.err.println("sdasd" + e);
 
-		}}
+		}
+
+		doGet(request, response);
 	}
 
 	private static boolean dangky(String name, String account, String pass, String date, String email, String phone,

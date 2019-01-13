@@ -38,12 +38,13 @@ public class Updatecart extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		todo(request, response);
 	}
 	public void todo (HttpServletRequest request ,HttpServletResponse response) throws ServletException,IOException{
 		HttpSession session = request.getSession();
 		TreeMap<Integer, Integer> map = (TreeMap<Integer, Integer>) session.getAttribute("cart");
-		if (map.size() ==0) {
+		if (map==null) {
 			response.sendRedirect("cart.jsp");
 		}
 		else {

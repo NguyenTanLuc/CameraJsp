@@ -19,7 +19,6 @@ public class Login {
 			statement.setString(2, passMD5);
 			ResultSet set = statement.executeQuery();
 			if (set.next()) {
-				int id = set.getInt("id");
 				String account = set.getString("account");
 				String pass = set.getString("password");
 				String name = set.getString("name");
@@ -29,12 +28,13 @@ public class Login {
 				String address = set.getString("address");
 				int status = set.getInt("status");
 				String date = set.getString("dateBirth");
-				User user = new User(id,name, account, pass, email, address, phone, idGroup, date, status);
+				User user = new User(name, account, pass, email, address, phone, idGroup, date, status);
 				set.close();
 				statement.close();
 				return user;
 			}
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
